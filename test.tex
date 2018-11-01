@@ -1,0 +1,73 @@
+\documentclass[11pt]{book}
+\usepackage[english]{babel}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Some PL topology}
+\label{sec:Einleitung}
+
+In this chapter we will collect some basic facts from the piecewise-linear category. Most of the proofs are omitted and can be found in standard references like \cite{pltopo}. If the reader is already familiar with basics from PL topology, the chapter may be skipped without loss of continuity.
+
+\begin{definition}
+Let $v_0,...,v_k \in \mathbb{R}^n$ be points in some affine space such that $\{ v_1-v_0,...,v_k-v_0 \}$ is a set of linearly independent vectors. We call
+
+\begin{equation}
+[v_0,...,v_k] := \Biggl \{  \lambda_0v_0+...+ \lambda_kv_k \Bigg |  \sum_{i=0}^k \lambda_i =1 \text{ and } \lambda_i \geq 0 \text{ for all i} \Biggr \}
+\end{equation}
+the simplex spanned by $\{v_0,...,v_k \}$. Its dimension is $k$ and we call it a \textbf{$k$-simplex} for short. The points that span a simplex are called vertices. For a simplex $\sigma$ we say that $\tau$ is a \textbf{face} of $\sigma$ if $\tau$ is a simplex spanned by a nonempty subset of the vertices of $\sigma$ and we abbreviate this by writing $\tau < \sigma$.
+\end{definition}
+
+\begin{definition}
+A \textbf{simplicial complex} $K$ is a set of simplices that satisfies the following conditions:
+
+\begin{itemize}
+\item Every face of a simplex in $K$ is also contained in $K$.
+\item The intersection of any two simplices $\sigma, \tau \in K$ is either empty or a face of both $\sigma$ and $\tau$.
+\end{itemize}
+
+We define the \textbf{geometric realization} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$.
+
+\end{definition}
+
+
+\begin{definition}
+Suppose that there are two simplicial complexes $K$ and $K'$ such that $|K| = |K'|$. If every simplex of $K'$ is contained in some simplex of $K$, we say that $K'$ is a \textbf{subdivision} of $K$ and write $K' \lhd K$.
+\end{definition}
+
+
+\begin{definition}
+A topological space $X$ is said to be $\mathbf{triangulable}$ if there exists a simplicial complex $T$ and a homeomorphism $\phi : |T| \to X$. The triple $(T,X, \phi)$ is called a \textbf{triangulation} of $X$. In this situation we will simply say that $T$ is a triangulation of $X$, by abuse of notation.
+\end{definition}
+
+
+\begin{definition}
+A \textbf{PL space} is a pair $(X,\mathcal{T})$ consisting of a topological space $X$ and a class $\mathcal{T}$ of locally finite triangulations of $X$ which satisfies the following conditions:
+\begin{itemize}
+\item If $T \in \mathcal{T}$ then $T' \in \mathcal{T}$ for any subdivision $T' \lhd T$.
+\item If $T,T' \in \mathcal{T}$ then there exists $T'' \in \mathcal{T}$ such that both $T'' \lhd T$ and $T'' \lhd T'$.
+\end{itemize}
+We will simply write $X$ for a PL space $(X,\mathcal{T})$ if there is no danger of confusion.
+
+\end{definition}
+
+
+\begin{thebibliography}[
+\bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology.}
+\end{thebibliography}
+
+\end{document}
