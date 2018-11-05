@@ -11,6 +11,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
 
 
 
@@ -21,14 +22,14 @@
 \chapter{Some PL topology}
 \label{sec:Einleitung}
 
-In this chapter we will collect some basic facts from the piecewise-linear category. Most of the proofs are omitted and can be found in standard references like \cite{pltopo}. If the reader is already familiar with basics from PL topology, the chapter may be skipped without loss of continuity.
+In this chapter we will collect some basic facts from the piecewise-linear category. Most of the proofs are omitted and can be found in standard references like \cite{pltopo}, \cite{hatcher}. If the reader is already familiar with basics from PL topology, the chapter may be skipped without loss of continuity.
 
 \begin{definition}
 Let $v_0,...,v_k \in \mathbb{R}^n$ be points in some affine space such that $\{ v_1-v_0,...,v_k-v_0 \}$ is a set of linearly independent vectors. We call
 
-\begin{equation}
+\begin{equation*}
 [v_0,...,v_k] := \Biggl \{  \lambda_0v_0+...+ \lambda_kv_k \Bigg |  \sum_{i=0}^k \lambda_i =1 \text{ and } \lambda_i \geq 0 \text{ for all i} \Biggr \}
-\end{equation}
+\end{equation*}
 the simplex spanned by $\{v_0,...,v_k \}$. Its dimension is $k$ and we call it a \textbf{$k$-simplex} for short. The points that span a simplex are called vertices. For a simplex $\sigma$ we say that $\tau$ is a \textbf{face} of $\sigma$ if $\tau$ is a simplex spanned by a nonempty subset of the vertices of $\sigma$ and we abbreviate this by writing $\tau < \sigma$.
 \end{definition}
 
@@ -40,13 +41,18 @@ A \textbf{simplicial complex} $K$ is a set of simplices that satisfies the follo
 \item The intersection of any two simplices $\sigma, \tau \in K$ is either empty or a face of both $\sigma$ and $\tau$.
 \end{itemize}
 
-We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex.
+We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex. We denote the set of vertices of $K$ by $V(K)$.
 \end{definition}
 
 
 \begin{definition}
 Suppose that there are two simplicial complexes $K$ and $K'$ such that $|K| = |K'|$. If every simplex of $K'$ is contained in some simplex of $K$, we say that $K'$ is a \textbf{subdivision} of $K$ and write $K' \lhd K$.
 \end{definition}
+
+
+\begin{example}
+Given a simplicial complex $K$ there is always an inductive process that produces a subdivision of $K$. Assume that $K^{(p-1)}$ has already been subdivided and let $\sigma=[v_0,...,v_p]$ be a $p$-simplex in $K$. The point $\hat{\sigma}=\frac{1}{p+1} \sum_{i=0}^p v_i$ lies in the interior of $\sigma$ and is called its \textbf{barycenter}. The \textbf{barycentric subdivision} of $\sigma$ is the decomposition of $\sigma$ into the $p$-simplices $[\hat{\sigma},w_0,...,w_{p-1}]$ where, inductively, $[w_o,...,w_{p-1}]$ is a $(p-1)$-simplex in the barycentric subdivision of a face $[v_0,...,\overline{v_i},...,v_p]$. (In this notation, the vertex $v_i$ is omitted.) Continuing this procedure for every $p$-simplex $\sigma$ leads to a decomposition of all simplices in $K^{(p)}$. The induction starts at $p=0$ when the barycentric subdivision of a $0$-simplex $[v_0]$ is just $[v_0]$ itself. It is guaranteed that this process delivers a subdivision $K^1 \lhd K$, called the \textbf{first barycentric subdivision} of $K$. For details, see \cite{hatcher}. More generally, the $r$-th barycentric subdivision is inductively given by $K^r=(K^{r-1})^1$.
+\end{example}
 
 
 \begin{definition}
@@ -64,13 +70,21 @@ We will simply write $X$ for a PL space $(X,\mathcal{T})$ if there is no danger 
 \end{definition}
 
 \begin{definition}
-Given simplicial complexes $K$ and $L$ we call a map $f: |K| \to |L|$ \textbf{simplicial} if $f$ maps each simplex of $K$ linearly onto some simplex of $L$. A map $g: |K| \to |L|$ between polyhedra  is said to be a \textbf{PL map} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: K' \to L' $ is simplicial.
+Given simplicial complexes $K$ and $L$ we call a map $f: |K| \to |L|$ \textbf{simplicial} if $f$ maps each simplex of $K$ linearly onto some simplex of $L$. A map $g: |K| \to |L|$ between PL spaces  is said to be a \textbf{PL map} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: K' \to L' $ is simplicial.
+\end{definition}
+Note that a simplicial map $f: K \to L$ is given by linear extension of a (set-theoretic) function $V(K) \to V(L)$.
+
+\begin{definition}
+A \textbf{simplicial isomorphism} between two simplicial complexes $K$ and $L$ is given by a bijection $f : V(K) \to V(L)$ such that $[v_0,...,v_k]$ is a $k$-simplex in $K$ if and only if $[f(v_0),...,f(v_k)]$ is a $k$-simplex in $L$. In particular, extending $f$ linearly yields a homeomorphism between the underlying polyhedra $|K|$ and $|L|$. A map $g: |K| \to |L|$ between PL spaces is a \textbf{PL isomorphism} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: |K'| \to |L'|$ is a simplicial isomorphism.
 \end{definition}
 
-ISOMPRHISM OF PL SPACES
+\begin{theorem}
+
+\end{theorem}
+
+STARS AND LINKS
 SIMPLICIAL APPROXIMATION
 DIMENSION
-BARYCENTRIC SUBDIVISION
 PL MANIFOLDS
 
 \begin{definition}
@@ -86,17 +100,18 @@ such that the following conditions are satisfied:
 \begin{equation*}
 L = L_{k-1} \supset L_{k-3} \supset ... \supset L_0 \supset L_{-1}= \emptyset
 \end{equation*}
-and a PL homeomorphism
+and a PL isomorphism
 \begin{equation*}
 \phi : U \to \mathbb{R}^{n-k} \times c^{\circ} L
 \end{equation*}
-(where $c^{\circ}$ denotes the open cone) which restricts to PL homeomorphisms $\phi_| : U \cap X_{n-l} \to \mathbb{R}^{n-k} \times c^{\circ} L_{k-l-1}$. We say that $\phi$ is \textbf{stratum-preserving}.
+(where $c^{\circ}$ denotes the open cone) which restricts to PL isomorphism $\phi_| : U \cap X_{n-l} \to \mathbb{R}^{n-k} \times c^{\circ} L_{k-l-1}$. We say that $\phi$ is \textbf{stratum-preserving}.
 \end{itemize}
 \end{definition}
 
 
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology.}
+\bibitem{hatcher}Allen Hatcher, \textit{Algebraic Topology.} p.120.
 \end{thebibliography}
 
 \end{document}
