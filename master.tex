@@ -23,7 +23,6 @@
 
 In this chapter we will collect some basic facts from the piecewise-linear category. Most of the proofs are omitted and can be found in standard references like \cite{pltopo}. If the reader is already familiar with basics from PL topology, the chapter may be skipped without loss of continuity.
 
-
 \begin{definition}
 Let $v_0,...,v_k \in \mathbb{R}^n$ be points in some affine space such that $\{ v_1-v_0,...,v_k-v_0 \}$ is a set of linearly independent vectors. We call
 
@@ -41,8 +40,7 @@ A \textbf{simplicial complex} $K$ is a set of simplices that satisfies the follo
 \item The intersection of any two simplices $\sigma, \tau \in K$ is either empty or a face of both $\sigma$ and $\tau$.
 \end{itemize}
 
-We define the \textbf{geometric realization} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$.
-
+We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex.
 \end{definition}
 
 
@@ -62,8 +60,38 @@ A \textbf{PL space} is a pair $(X,\mathcal{T})$ consisting of a topological spac
 \item If $T \in \mathcal{T}$ then $T' \in \mathcal{T}$ for any subdivision $T' \lhd T$.
 \item If $T,T' \in \mathcal{T}$ then there exists $T'' \in \mathcal{T}$ such that both $T'' \lhd T$ and $T'' \lhd T'$.
 \end{itemize}
-We will simply write $X$ for a PL space $(X,\mathcal{T})$ if there is no danger of confusion.
+We will simply write $X$ for a PL space $(X,\mathcal{T})$ if there is no danger of confusion. A \textbf{closed PL subspace} of $X$ is a subcomplex of a suitable triangulation of $X$.
+\end{definition}
 
+\begin{definition}
+Given simplicial complexes $K$ and $L$ we call a map $f: |K| \to |L|$ \textbf{simplicial} if $f$ maps each simplex of $K$ linearly onto some simplex of $L$. A map $g: |K| \to |L|$ between polyhedra  is said to be a \textbf{PL map} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: K' \to L' $ is simplicial.
+\end{definition}
+
+ISOMPRHISM OF PL SPACES
+SIMPLICIAL APPROXIMATION
+DIMENSION
+BARYCENTRIC SUBDIVISION
+PL MANIFOLDS
+
+\begin{definition}
+A \textbf{0-dimensional PL stratified pseudomanifold} is a countable set of points with the discrete topology. An \textbf{n-dimensional PL stratified pseudomanifold} $X$ is a PL space together with a filtration of closed PL subspaces
+\begin{equation*}
+X=X_n \supset X_{n-1} = X_{n-2} \supset ... \supset X_0 \supset X_{-1} = \emptyset
+\end{equation*}
+such that the following conditions are satisfied:
+\begin{itemize}
+\item Every $X_{n-k} - X_{n-k-1}$ is a (possibly empty) PL manifold of dimension $n-k$.
+\item $X-X_{n-2}$ is dense in $X$.
+\item \textbf{Local normal triviality:} For every point $x \in X_{n-k} - X_{n-k-1}$ there exists an open neighborhood $U$ of $x$  in $X$ and a compact PL stratified pseudomanifold $L$ of dimension $k-1$ with filtration
+\begin{equation*}
+L = L_{k-1} \supset L_{k-3} \supset ... \supset L_0 \supset L_{-1}= \emptyset
+\end{equation*}
+and a PL homeomorphism
+\begin{equation*}
+\phi : U \to \mathbb{R}^{n-k} \times c^{\circ} L
+\end{equation*}
+(where $c^{\circ}$ denotes the open cone) which restricts to PL homeomorphisms $\phi_| : U \cap X_{n-l} \to \mathbb{R}^{n-k} \times c^{\circ} L_{k-l-1}$. We say that $\phi$ is \textbf{stratum-preserving}.
+\end{itemize}
 \end{definition}
 
 
