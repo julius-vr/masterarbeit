@@ -41,9 +41,24 @@ A \textbf{simplicial complex} $K$ is a set of simplices that satisfies the follo
 \item The intersection of any two simplices $\sigma, \tau \in K$ is either empty or a face of both $\sigma$ and $\tau$.
 \end{itemize}
 
-We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex. We denote the set of vertices of $K$ by $V(K)$.
+We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex. We denote the set of vertices of $K$ by $V(K)$. The \textbf{dimension} of $K$ is the largest dimension of any simplex contained in $K$. If no such maximum exists, we say that $K$ is of dimension $\infty$. $K$ is said to be of \textbf{pure dimension} $n$ if every simplex of $K$ is a face of some $n$-simplex in $K$.
 \end{definition}
 
+
+\begin{definition}
+Let $K$ be a simplicial complex of pure dimension $n$. The \textbf{boundary} $Bd(K)$ of $K$ is defined to be the (possibly empty) subcomplex of $K$ of pure dimension $n-1$, whose $(n-1)$-simplices are those $(n-1)$-simplices of $K$ which are incident to precisely one $n$-simplex in $K$.
+\end{definition}
+
+\begin{definition}
+For a simplicial complex $K$ and a simplex $\sigma \in K$, we call
+\begin{equation*}
+St(\sigma,K)= \{ \rho \in K | \rho < \tau, \sigma < \tau \text{ for some } \tau \in K \}  
+\end{equation*}
+the \textbf{star} of $\sigma$ in $K$. The \textbf{link} of $\sigma$ in $K$ is given by
+\begin{equation*}
+Lk(\sigma,K) = \{ \rho \in St(\sigma,K) | \sigma \cap \rho = \emptyset \}.
+\end{equation*}
+\end{definition}
 
 \begin{definition}
 Suppose that there are two simplicial complexes $K$ and $K'$ such that $|K| = |K'|$. If every simplex of $K'$ is contained in some simplex of $K$, we say that $K'$ is a \textbf{subdivision} of $K$ and write $K' \lhd K$.
@@ -78,13 +93,15 @@ Note that a simplicial map $f: K \to L$ is given by linear extension of a (set-t
 A \textbf{simplicial isomorphism} between two simplicial complexes $K$ and $L$ is given by a bijection $f : V(K) \to V(L)$ such that $[v_0,...,v_k]$ is a $k$-simplex in $K$ if and only if $[f(v_0),...,f(v_k)]$ is a $k$-simplex in $L$. In particular, extending $f$ linearly yields a homeomorphism between the underlying polyhedra $|K|$ and $|L|$. A map $g: |K| \to |L|$ between PL spaces is a \textbf{PL isomorphism} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: |K'| \to |L'|$ is a simplicial isomorphism.
 \end{definition}
 
-\begin{theorem}
-
+\begin{theorem}(Simplicial Approximation Theorem).
+Let $f: |K| \to |L|$ be a map between polyhedra. Then there exist subdivisions $K' \lhd K$ and $L' \lhd L$ and a simplicial map $g: |K'| \to |L'|$ which is $\epsilon$-homotopic to $f$, i.e. if $\epsilon: |L| \to (0,\infty)$ is a map, then there is a map $H: |K| \times [0,1] \to |L|$ with $H(|K| \times \{ 0\})=f$, $H(|K| \times \{ 1\})=g$ and diam$(H(\{ x \} \times [0,1])) < \epsilon(f(x))$.
 \end{theorem}
 
-STARS AND LINKS
-SIMPLICIAL APPROXIMATION
-DIMENSION
+\begin{proof}
+See \cite{lecturenotes}, e.g.
+\end{proof}
+
+DIMENSION \\
 PL MANIFOLDS
 
 \begin{definition}
@@ -109,9 +126,52 @@ and a PL isomorphism
 \end{definition}
 
 
+
+
+
+\chapter{A bordism approach to homology theories}
+The purpose of this chapter is to give a geometric treatment of homology theories, as described by S. Buoncristiano, C. Rourke and B. Sanderson in \cite{BRS}. First we use local link properties to determine a class of polyhedra. Then, in an analagous manner to ordinary bordism theory, we define groups of bordism classes of maps, whose domains lie in the polyhedral class defined before. We observe that interesting examples of generalized homology theories can be interpreted in this way, including ordinary homology, ($\mathbb{Z}/2$)-homology and PL bordism theory. \newline
+For the rest of this chapter we make the convention that every polyhedron is PL and of pure dimension.
+
+\begin{definition}
+Suppose we are given a class $\mathcal{L}_n$ of $(n-1)$-polyhedra which is closed under PL isomorphism. Then a \textbf{closed $\mathcal{L}_n$-manifold} is a polyhedron $M$ such that the link of each vertex of $M$ lies in $\mathcal{L}_n$. 
+\end{definition}
+
+\begin{definition}\label{theory}
+A \textbf{theory with singularities} $\mathcal{L}$ consists of a class $\mathcal{L}_n$ of $(n-1)$-polyhedra for every $n=0,1,...$ which satisfy the following compatibility conditions:
+\begin{itemize}
+\item[1.] each member of $\mathcal{L}_n$ is a closed $\mathcal{L}_{n-1}$-manifold.
+\item[2.] $S \mathcal{L}_{n-1} \subset \mathcal{L}_n$ (i.e. the suspension of an $(n-1)$-link is always an $n$-link).
+\item[3.] $c \mathcal{L}_{n-1} \cap \mathcal{L}_n = \emptyset$ (i.e. the cone of an $(n-1)$-link is never an $n$-link).
+\end{itemize}
+Then an \textbf{$\mathcal{L}_n$-manifold with boundary} consists of a polyhedron whose links of vertices lie either in $\mathcal{L}_n$ or in $c \mathcal{L}_{n-1}$. The \textbf{boundary} consists of the subpolyhedron spanned by vertices whose links lie in the latter class.
+\end{definition}
+
+\begin{prop}
+Let $W$ be an $\mathcal{L}_n$-manifold with boundary in a fixed theory with singularities $\mathcal{L}$. Then the boundary of $W$, denoted by $\partial W$, is well-defined and is itself a closed $\mathcal{L}_{n-1}$-manifold.
+\end{prop}
+
+\begin{proof}
+By the third requirement of Definition \ref{theory}, the link of a vertex in $W$ is contained in $c \mathcal{L}_{n-1}$ if and only if it is not contained in $\mathcal{L}_n$. This shows that $\partial W$ is well-defined. For the second statement, note that $\partial W$ is a subpolyhedron by definition and that if $v$ is a vertex in $\partial W$ with $Lk(v,W)=cL$ for some $L \in \mathcal{L}_{n-1}$, then $Lk(v,\partial W) = L$.
+\end{proof}
+
+DEFINITION ÜBERARBEITEN: \\
+LINKS STABIL BZGL SUBDIVISION? \\
+RAND \\
+PL POLYEDER STATT POLYEDER
+
+
+\chapter{The basic sets $Q_i^{\overline{p}}$}
+In this chapter we will define and study the so called "basic sets", originally introduced by M. Goresky and R. McPherson in \cite{GM}. Given a stratified PL pseudomanifold $X$ and a perversity $\overline{p}$, we construct subpolyhedra $Q_i^{\overline{p}}$ of $X$ for every $i \geq 0$. They are designed to give a connection between ordinary homology groups of these basic sets and the intersection homology groups of the whole space $X$.
+
+
+
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology.}
 \bibitem{hatcher}Allen Hatcher, \textit{Algebraic Topology.} p.120.
+\bibitem{lecturenotes}I. M. Singer and J. A. Thorpe, \textit{Lecture Notes on Elementary Topology and Geometry}, chapter 4.
+\bibitem{GM}M. Goresky, R. McPherson, \textit{Intersection Homology Theory}.
+\bibitem{BRS}S. Buoncristiano, C. Rourke and B. Sanderson, \textit{A Geometric Approach to Homology Theory}.
 \end{thebibliography}
 
 \end{document}
