@@ -101,6 +101,7 @@ Let $f: |K| \to |L|$ be a map between polyhedra. Then there exist subdivisions $
 See \cite{lecturenotes}, e.g.
 \end{proof}
 
+JOIN \\
 DIMENSION \\
 PL MANIFOLDS
 
@@ -143,6 +144,7 @@ A \textbf{theory with singularities} $\mathcal{L}$ consists of a class $\mathcal
 \item[1.] each member of $\mathcal{L}_n$ is a closed $\mathcal{L}_{n-1}$-manifold.
 \item[2.] $S \mathcal{L}_{n-1} \subset \mathcal{L}_n$ (i.e. the suspension of an $(n-1)$-link is always an $n$-link).
 \item[3.] $c \mathcal{L}_{n-1} \cap \mathcal{L}_n = \emptyset$ (i.e. the cone of an $(n-1)$-link is never an $n$-link).
+\item[4.] $S(c\mathcal{L}_{n-2}), c(c \mathcal{L}_{n-2}) \subset c \mathcal{L}_{n-1}$.
 \end{itemize}
 Then an \textbf{$\mathcal{L}_n$-manifold with boundary} consists of a polyhedron whose links of vertices lie either in $\mathcal{L}_n$ or in $c \mathcal{L}_{n-1}$. The \textbf{boundary} consists of the subpolyhedron spanned by vertices whose links lie in the latter class.
 \end{definition}
@@ -152,13 +154,54 @@ Let $W$ be an $\mathcal{L}_n$-manifold with boundary in a fixed theory with sing
 \end{prop}
 
 \begin{proof}
-By the third requirement of Definition \ref{theory}, the link of a vertex in $W$ is contained in $c \mathcal{L}_{n-1}$ if and only if it is not contained in $\mathcal{L}_n$. This shows that $\partial W$ is well-defined. For the second statement, note that $\partial W$ is a subpolyhedron by definition and that if $v$ is a vertex in $\partial W$ with $Lk(v,W)=cL$ for some $L \in \mathcal{L}_{n-1}$, then $Lk(v,\partial W) = L$.
+By the third requirement of Def. \ref{theory}, the link of a vertex in $W$ is contained in $c \mathcal{L}_{n-1}$ if and only if it is not contained in $\mathcal{L}_n$. This shows that $\partial W$ is well-defined. For the second statement, note that $\partial W$ is a subpolyhedron by definition and that if $v$ is a vertex in $\partial W$ with $Lk(v,W)=cL$ for some $L \in \mathcal{L}_{n-1}$, then $Lk(v,\partial W) = L$.
 \end{proof}
 
 DEFINITION ÜBERARBEITEN: \\
 LINKS STABIL BZGL SUBDIVISION? \\
-RAND \\
-PL POLYEDER STATT POLYEDER
+KOMPAKTE POLYEDER \\
+ORIENTIERUNGEN \\
+EVTL ORIENTIERUNGSERHALTENDE ISOMORPHISMEN 
+
+\begin{definition}
+Let $\mathcal{L}$ be a theory with singularities and let $(X,A)$ be a pair of topological spaces (i.e. $A \subset X$ is a subspace). For two oriented $\mathcal{L}_i$-manifolds (possibly with boundary) $P,Q$  assume that we are given continuous maps $f:(P, \partial P) \to (X,A)$ and $g:(Q , \partial Q) \to (X,A)$. An \textbf{oriented bordism} between $f$ and $g$ is a triple $(F,W,Z)$, where $W$ is an oriented $\mathcal{L}_{i+1}$-manifold with boundary, s.t. $\partial W \cong P \sqcup -Q \cup Z$, $Z$ is an oriented $\mathcal{L}_i$-manifold (possibly with boundary), s.t. $\partial Z\cong \partial P \sqcup - \partial Q$ and $F: (W,Z) \to (X,A)$ is a continuous map with $F _{|P} = f$ and $F_{|Q}=g$. If there exists a bordism between them, $f$ and $g$ are said to be \textbf{bordant} and we abbreviate this by writing $f \sim_{bord} g$.
+\end{definition}
+
+\begin{definition}
+With the notation as in the previous definition, $f: (P, \partial P) \to (X,A)$ and $g: (Q, \partial Q) \to (X,A)$ are called \textbf{isomorphic} if there exists a PL isomorphism $h : P \to Q$ s.t. the diagram \newline
+\begin{xy}
+  \xymatrix{
+      (P, \partial P) \ar[rr]^h \ar[rd]_f  &     &  (Q, \partial Q) \ar[dl]^g  \\
+                             &  (X,A)  &
+  }
+\end{xy}
+\newline
+commutes. Let $Isom_{i}^{\mathcal{L}}(X,A)$ be the set of isomorphism classes of maps $f: (P, \partial P) \to (X,A)$, where $P$ varies over all $\mathcal{L}_i$-manifolds of a fixed theory $\mathcal{L}$.
+\end{definition}
+
+\begin{prop}
+The relation $\sim_{bord} $ is an equivalence relation on $Isom_{i}^{\mathcal{L}}(X,A)$.
+\end{prop}
+
+\begin{proof}
+Let $[f: (P, \partial P) \to (X,A)] \in Isom_{i}^{\mathcal{L}}(X,A)$ and let $I=[0,1]$ denote the closed interval. The only links in $I$ are $S^0$ and $pt.$ and so there are four types of links in $P \times I$, namely $S^0 * L \cong SL,\  pt. * L \cong cL,\  S^0 * cL' \cong S(cL')$ and $pt. * cL' \cong c(cL')$, where $L \in \mathcal{L}_i$ and $L' \in \mathcal{L}_{i-1}$ are some links of $P$. The first statement of Def. \ref{theory} ensures that the first type of links is contained in $\mathcal{L}_{i+1}$ and by the fourth statement all other types of links lie in $c \mathcal{L}_i$. There exists a canonical orientation of $P \times I$ s.t. $\partial (P \times I)= P \sqcup -P \cup \partial P \times I$. So, $P \times I$ is an oriented $\mathcal{L}_{i+1}$-manifold and we define $F: (P \times I, \partial(P \times I)) \to (X,A)$ by $F(x,s)=f(x)$ for every $s \in I$. Then $f \sim_{bord} f$ via $F$ and this bordism is well-defined on the isomorphism class of $f$, which shows reflexivity. For symmetry, we only need to obersve that disjoint union commutes, up to isomorphism. Now suppose $f \sim_{bord} g$ and $g \sim_{bord} h$ via bordisms $F$ and $G$, respectively, where $g: (Q, \partial Q) \to (X,A)$, $F: (W,Z) \to (X,A)$ and $G: (W',Z') \to (X,A)$. If $W \cup_{Q} W'$ denotes the space obtained by glueing $W$ and $W'$ along $Q$, we let $H: W \cup_{Q} W' \to X$ be the unique map with $H_{|W} = F$ and $H_{|W'}=G$. If $v$ is any vertex in $Q$, we have $Lk(v,W)=cLk(v,Q)=Lk(v,W')$, and therefore $Lk(v,W \cup_{Q} W') = SLk(v,Q)$, which lies in $\mathcal{L}_{i+1}$, by definition. Since the links of all other vertices remain unaltered, we see that $W \cup_{Q} W'$ is in fact an $\mathcal{L}_{i+1}$-manifold. Moreover, we have $\partial (W \cup_{Q} W')= dom(f) \sqcup -dom(h) \cup (Z \cup_{\partial Q} Z')$ with $\partial (Z \cup_{\partial Q} Z')= \partial (dom(f)) \sqcup - \partial (dom(h))$, and the same argument as before shows that $Z \cup_{\partial Q} Z'$ is an $\mathcal{L}_i$-manifold. We conclude $f \sim_{bord} h$ via $H: (W \cup_{Q} W',Z \cup_{\partial Q} Z') \to (X,A)$, and again $H$ is a well-defined bordism on isomorphism classes of $f$ and $h$. This shows transitivity and completes the proof.
+\end{proof}
+
+\begin{definition}
+For a theory with singularities $\mathcal{L}$, we let  
+\begin{equation*}
+\Omega_i^\mathcal{L}(X,A)= Isom_i^\mathcal{L}(X,A)/ \sim_{bord}
+\end{equation*}
+ and call it the \textbf{$i$-th (relative) $\mathcal{L}$-bordism group} with base $(X,A)$. Moreover, we define
+\begin{equation*}
+\Omega_i^\mathcal{L}(X)=\Omega_i^\mathcal{L}(X, \emptyset)
+\end{equation*}
+and call it the \textbf{$i$-th (absolute) $\mathcal{L}$-bordism group} with base $X$.
+\end{definition}
+
+\begin{remark}
+
+\end{remark}
 
 
 \chapter{The basic sets $Q_i^{\overline{p}}$}
