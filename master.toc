@@ -1,4 +1,4 @@
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Some PL topology}{3}{chapter.1}
 \contentsline {chapter}{\numberline {2}A bordism approach to homology theories}{7}{chapter.2}
-\contentsline {chapter}{\numberline {3}The basic sets $Q_i^{\overline {p}}$}{11}{chapter.3}
+\contentsline {chapter}{\numberline {3}The basic sets $Q_i^{\overline {p}}$}{15}{chapter.3}

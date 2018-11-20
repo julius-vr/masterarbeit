@@ -5,6 +5,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tikz-cd}
 
 \newtheorem{prop}{Proposition}
 \newtheorem{lemma}{Lemma}
@@ -184,10 +185,10 @@ The relation $\sim_{bord} $ is an equivalence relation on $Isom_{i}^{\mathcal{L}
 \end{prop}
 
 \begin{proof}
-Let $[f: (P, \partial P) \to (X,A)] \in Isom_{i}^{\mathcal{L}}(X,A)$ and let $I=[0,1]$ denote the closed interval. The only links in $I$ are $S^0$ and $pt.$ and so there are four types of links in $P \times I$, namely $S^0 * L \cong SL,\  pt. * L \cong cL,\  S^0 * cL' \cong S(cL')$ and $pt. * cL' \cong c(cL')$, where $L \in \mathcal{L}_i$ and $L' \in \mathcal{L}_{i-1}$ are some links of $P$. The first statement of Def. \ref{theory} ensures that the first type of links is contained in $\mathcal{L}_{i+1}$ and by the fourth statement all other types of links lie in $c \mathcal{L}_i$. There exists a canonical orientation of $P \times I$ s.t. $\partial (P \times I)= P \sqcup -P \cup \partial P \times I$. So, $P \times I$ is an oriented $\mathcal{L}_{i+1}$-manifold and we define $F: (P \times I, \partial(P \times I)) \to (X,A)$ by $F(x,s)=f(x)$ for every $s \in I$. Then $f \sim_{bord} f$ via $F$ and this bordism is well-defined on the isomorphism class of $f$, which shows reflexivity. For symmetry, we only need to obersve that disjoint union commutes, up to isomorphism. Now suppose $f \sim_{bord} g$ and $g \sim_{bord} h$ via bordisms $F$ and $G$, respectively, where $g: (Q, \partial Q) \to (X,A)$, $F: (W,Z) \to (X,A)$ and $G: (W',Z') \to (X,A)$. If $W \cup_{Q} W'$ denotes the space obtained by glueing $W$ and $W'$ along $Q$, we let $H: W \cup_{Q} W' \to X$ be the unique map with $H_{|W} = F$ and $H_{|W'}=G$. If $v$ is any vertex in $Q$, we have $Lk(v,W)=cLk(v,Q)=Lk(v,W')$, and therefore $Lk(v,W \cup_{Q} W') = SLk(v,Q)$, which lies in $\mathcal{L}_{i+1}$, by definition. Since the links of all other vertices remain unaltered, we see that $W \cup_{Q} W'$ is in fact an $\mathcal{L}_{i+1}$-manifold, which clearly is compact, as $W$ and $W'$ are. Moreover, we have $\partial (W \cup_{Q} W')= dom(f) \sqcup -dom(h) \cup (Z \cup_{\partial Q} Z')$ with $\partial (Z \cup_{\partial Q} Z')= \partial (dom(f)) \sqcup - \partial (dom(h))$, and the same argument as before shows that $Z \cup_{\partial Q} Z'$ is an $\mathcal{L}_i$-manifold. We conclude $f \sim_{bord} h$ via $H: (W \cup_{Q} W',Z \cup_{\partial Q} Z') \to (X,A)$, and again $H$ is a well-defined bordism on isomorphism classes of $f$ and $h$. This shows transitivity and completes the proof.
+Let $[f: (P, \partial P) \to (X,A)] \in Isom_{i}^{\mathcal{L}}(X,A)$ and let $I=[0,1]$ denote the closed interval. The only links in $I$ are $S^0$ and $pt.$ and so there are four types of links in $P \times I$, namely $S^0 * L \cong SL,\  pt. * L \cong cL,\  S^0 * cL' \cong S(cL')$ and $pt. * cL' \cong c(cL')$, where $L \in \mathcal{L}_i$ and $L' \in \mathcal{L}_{i-1}$ are some links of $P$. The second statement of Def. \ref{theory} ensures that the first type of links is contained in $\mathcal{L}_{i+1}$ and by the fourth statement all other types of links lie in $c \mathcal{L}_i$. There exists a canonical orientation of $P \times I$ s.t. $\partial (P \times I)= P \sqcup -P \cup \partial P \times I$. So, $P \times I$ is an oriented $\mathcal{L}_{i+1}$-manifold and we define $F: (P \times I, \partial(P \times I)) \to (X,A)$ by $F(x,s)=f(x)$ for every $s \in I$. Then $f \sim_{bord} f$ via $F$ and this bordism is well-defined on the isomorphism class of $f$, which shows reflexivity. For symmetry, we only need to obersve that disjoint union commutes, up to isomorphism. Now suppose $f \sim_{bord} g$ and $g \sim_{bord} h$ via bordisms $F$ and $G$, respectively, where $g: (Q, \partial Q) \to (X,A)$, $F: (W,Z) \to (X,A)$ and $G: (W',Z') \to (X,A)$. If $W \cup_{Q} W'$ denotes the space obtained by glueing $W$ and $W'$ along $Q$, we let $H: W \cup_{Q} W' \to X$ be the unique map with $H_{|W} = F$ and $H_{|W'}=G$. If $v$ is any vertex in $Q$, we have $Lk(v,W)=cLk(v,Q)=Lk(v,W')$, and therefore $Lk(v,W \cup_{Q} W') = SLk(v,Q)$, which lies in $\mathcal{L}_{i+1}$, by definition. Since the links of all other vertices remain unaltered, we see that $W \cup_{Q} W'$ is in fact an $\mathcal{L}_{i+1}$-manifold, which clearly is compact, as $W$ and $W'$ are. Moreover, we have $\partial (W \cup_{Q} W')= dom(f) \sqcup -dom(h) \cup (Z \cup_{\partial Q} Z')$ with $\partial (Z \cup_{\partial Q} Z')= \partial (dom(f)) \sqcup - \partial (dom(h))$, and the same argument as before shows that $Z \cup_{\partial Q} Z'$ is an $\mathcal{L}_i$-manifold. We conclude $f \sim_{bord} h$ via $H: (W \cup_{Q} W',Z \cup_{\partial Q} Z') \to (X,A)$, and again $H$ is a well-defined bordism on isomorphism classes of $f$ and $h$. This shows transitivity and completes the proof.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{bordismgroup}
 For a theory with singularities $\mathcal{L}$, we let  
 \begin{equation*}
 \Omega_i^\mathcal{L}(X,A)= Isom_i^\mathcal{L}(X,A)/ \sim_{bord}
@@ -217,7 +218,110 @@ Let $[f: (P, \partial P) \to (X,A)], [g: (Q,\ \partial Q) \to (X,A)] \in \Omega_
 \begin{equation*}
 [f] \sqcup [-f] = [f \sqcup -f] = 0 
 \end{equation*}
-and so the inverse of $[f]$ is given by $[-f]$. In the unoriented setting, we can remark that every class is self-inverse.
+and so the inverse of $[f]$ is given by $[-f]$. In the unoriented setting, we can remark that every bordism class is self-inverse.
+\end{proof}
+
+The previous Proposition allows us to speak of bordism groups, rather than of bordism sets and we adapt this terminology for the rest of this discussion. \newline So far, we did not explain connections of $\mathcal{L}$-bordism groups for varying base spaces. This will be done in the following.
+
+\begin{definition}
+Let $\boldsymbol{CW^2}$ denote the category of pairs of finite CW spaces with continuous maps between them and let $\boldsymbol{AbGrp}$ be the category of abelian groups with group homomorphisms between them. Moreover, let $T$ denote the covariant functor on $\boldsymbol{CW^2}$, given by
+\begin{align*}
+&T(X,A) = (A, \emptyset) \text{, for any } (X,A) \in \boldsymbol{CW^2},  \\
+&T(f) = f_{|(A, \emptyset)} : (A, \emptyset) \to (B, \emptyset) \text{, for any } f: (X,A) \to (Y,B) \in \boldsymbol{CW^2}.
+\end{align*}
+A \textbf{generalized homology theory} is a pair $(H_*, \partial_*)$, consisting of a sequence of functors $H_i : \boldsymbol{CW^2} \to \boldsymbol{AbGrp}$, together with a sequence of natural transformations $\partial_i : H_i \to H_{i-1} \circ T$, s.t. the following three conditions are satisfied: \begin{itemize}
+\item[1.] \textbf{Homotopy-invariance:} If $f,g \in \boldsymbol{CW^2}$ are homotopic maps, then $H_i(f)=H_i(g)$ for all $i$.
+\item[2.] \textbf{Excision:} Let $(X,A) \in \boldsymbol{CW^2}$ and suppose $U$ is a subspace of $X$ with $\overline{U} \subset int(A)$, then the inclusion $j: (X-U,A-U) \to (X,A)$ induces isomorphisms 
+\begin{equation*}
+j_* : H_i(X-U,A-U) \to H_i(X,A),
+\end{equation*}
+for all $i$.
+\item[3.] \textbf{Long exact sequence:} If $(X,A) \in \boldsymbol{CW^2}$ and if $j: (A, \emptyset) \to (X, \emptyset)$ and $k: (X, \emptyset) \to (X,A)$ denote the inclusions, the sequence
+\begin{equation*}
+\begin{xy}
+\xymatrix{ 
+\cdots \ar[r]^{}     &   H_{i+1}(X,A) \ar[r]^{\ \ \partial_{i+1}}    &   H_i(A) \ar[r]^{H_i(j)}   &  H_i(X) \\
+  \ar[r]^{H_i(k)}   &   H_i(X,A)  \ar[r]^{\partial_i}   &   H_{i-1}(A) \ar[r]^{}   &   \cdots
+}
+\end{xy}
+\end{equation*}
+is exact, for all $i$.
+\end{itemize}
+A generalized homology theory $(H_*, \partial_*)$ is called \textbf{ordinary} if the following additional requirement holds:
+\begin{itemize}
+\item[4.] \textbf{Dimension:} $H_i(pt.)=0$ for $i \neq 0$.
+\end{itemize}
+\end{definition}
+
+\begin{theorem}
+For a theory with singularities $\mathcal{L}$, the pair $(\Omega_*^{\mathcal{L}}, \partial_*)$ is a generalized homology theory, where 
+\begin{align*}
+\partial_i :\  \Omega_i^{\mathcal{L}}(X,A) &\to \Omega_{i-1}^{\mathcal{L}}(A) \\
+[f: (P, \partial P) \to (X,A)] &\mapsto [f_{| \partial P}: \partial P \to A]
+\end{align*}
+for any pair $(X,A) \in \boldsymbol{CW^2}$.
+\end{theorem}
+
+\begin{proof}
+First, if $\phi : (X,A) \to (Y,B) \in \boldsymbol{CW^2}$, then the induced map of $\phi $ is given by
+\begin{align*}
+\phi_* : \Omega_i^{\mathcal{L}}(X,A) &\to \Omega_i^{\mathcal{L}}(Y,B) \\
+[f] &\mapsto [\phi \circ f],
+\end{align*}
+which is well-defined since if $F$ is a bordism over $(X,A)$, then $\phi \circ F$ is a bordism over $(Y,B)$. Moreover, this construction respects the corresponding group structures, behaves functorial and we have $(id)_*=id$. The maps $\partial_i$ are natural, as composition of maps commutes with restriction to the boundary. 
+\begin{itemize}
+\item[1.] Homotopy-invariance: Let $\phi, \psi : (X,A) \to (Y,B)$ be two homotopic maps via a homotopy $H$. For $[f] \in \Omega_i^{\mathcal{L}}(X,A)$, the map
+\begin{equation*}
+F: (dom(f) \times I) \to (X,A) 
+\end{equation*}
+with $F(x,s)=H(f(x),s)$ is a bordism between $\phi \circ f$ and $\psi \circ f$ (with reversed orientation of its domain). So, we have
+\begin{align*}
+\phi_* ([f]) = [\phi \circ f] = [\psi \circ f] = \psi_* ([f])
+\end{align*}
+and since $[f]$ was chosen arbitrarily, we conclude $\phi_*= \psi_*$.
+\item[2.] Excision: For $(X,A) \in \boldsymbol{CW^2}$ and $U \subset A$ with $\overline{U} \subset int(A)$, let 
+\begin{equation*}
+j_i: \Omega_i^{\mathcal{L}}(X-U, A-U) \to \Omega_i^{\mathcal{L}}(X,A)
+\end{equation*}
+denote the map induced by inclusion. We will show that $j_i$ is an isomorphism. To see surjectivity, consider $[f: (P, \partial P) \to (X,A)] \in \Omega_i^{\mathcal{L}}(X,A)$ and let $U_1 = f^{-1}(U)$ and $A_1= f^{-1}(A)$. We choose a triangulation $T$ of $P$, fine enough such that the smallest subcomplex of $T$ which contains every simplex that meets $M-A_1$, is contained in $M-U_1$. This is possible, since $d(M-int(A_1), \overline{U_1})>0$ for any metric $d$ on $P$. If we denote this subcomplex by $K$, note that for any vertex $v \in K$ either $Lk(v,K)=Lk(v,T)$ or, by the first condition of Def. \ref{theory}, there exists a vertex $w \in L:= Lk(v,T)$ such that $Lk(w,L)=Lk(v,Bd(K))$. It follows that
+\begin{align*}
+Lk(v,K) = w * Lk(v,Bd(K)) = w * Lk(w,L) \cong c(Lk(w,L))
+\end{align*}
+and since $Lk(w,L) \in \mathcal{L}_{i-1}$, $|K|$ is in fact an $\mathcal{L}_i$-manifold. By construction, $f_1:=f|_{|K|}$ defines a class in $\Omega_i^{\mathcal{L}}(X-U,A-U)$ and 
+\begin{align*}
+F: \frac{P \times I}{ (P-|K|) \times \{ 1 \} } &\to (X,A) \\
+(x,s) &\mapsto f(x)
+\end{align*}
+defines a bordism between $f$ and $f_1$ over $(X,A)$. Consequently, we have $j_i ([f_1]) = [f]$. For injectivity, suppose $j_i([f])=0$ and let $F$ be the corresponding null-bordism for $f$ over $(X,A)$. Then, the same construction as before applied to $F$ provides a null-bordism $F_1$ for $f$ over $(X-U,A-U)$, which shows $[f]=0$.
+\item[3.] Long exact sequence: For some $i \geq 0$, let \\
+\begin{tikzcd}
+\cdots \arrow[r] & \Omega_i^{\mathcal{L}}(A) \arrow[r,"j_i"] & \Omega_i^{\mathcal{L}}(X) \arrow[r,"k_i"] & \Omega_i^{\mathcal{L}}(X,A) \\ 
+& \arrow[r,"\partial_i"] & \Omega_{i-1}^{\mathcal{L}}(A) \arrow[r,"j_{i-1}"] & \Omega_{i-1}^{\mathcal{L}}(X) \arrow[r]& \cdots
+\end{tikzcd}
+\\
+be the sequence of the induced maps of inclusions $j,k$ and restriction map $\partial_i$. \\
+{$im(j_i) = ker(k_i):$} If $[f:P \to A] \in \Omega_i^{\mathcal{L}}(A)$, then $F: (P \times I, -P) \to (X,A)$ with $F(x,s)=f(x)$ is a null-bordism for $f$ over $(X,A)$, which shows $k_i \circ j_i = 0$. Now, suppose that $[g: Q \to X] \in \Omega_i^{\mathcal{L}}(X)$ with $k_i([g])=0$. This means that there exists a null-bordism $G: (W,Z) \to (X,A)$ for $g$ over $(X,A)$. We then have 
+\begin{align*}
+j_i([G_{|Z}: -Z \to A]) = [g],
+\end{align*}
+as $G: W \to X$ is a bordism between $G_{|Z}$ and $g$ over $X$. \\
+$im(k_i)=ker(\partial_i):$ Since $\partial_i \circ k_i$ is given by restriction to an empty boundary, $\partial_i \circ k_i=0$ is obvious. On the other hand, if 
+\begin{align*}
+\partial_i([f:(P, \partial P) \to (X,A)])= [f_{| \partial P} : \partial P \to A] = 0,
+\end{align*}
+there exists a null-bordism $F: W \to A$ for $f_{| \partial P}$ over $A$. In particular, we have $\partial W= \partial P$. Let $Q$ denote the cylinder $P \times I$, in which we add $W$ by glueing it along the boundary of $P \times \{ 0 \}$. Then $Q$ is an $\mathcal{L}_{i+1}$-manifold with $P$ and $P \cup_{\partial P} W$ sitting inside its boundary. We define the map $G: Q \to X$ to be $f$ on every level of the cylinder and to be $F$ on $W$. The condition $F_{| \partial W}=f_{| \partial P}$ ensures that $G$ is well-defined and continuous. Moreover, $G$ is a bordism between $G_{|P \cup_{\partial P} W}$ and $f$ over $(X,A)$ and since $P \cup_{\partial P} W$ has no boundary, we conclude 
+\begin{align*}
+k_i([G_{|P \cup_{\partial P} W}])=[f].
+\end{align*}
+$im(\partial_i)= ker(j_{i-1}):$ If $[f:(P, \partial P) \to (X,A)] \in \Omega_{i}^{\mathcal{L}}(X,A)$, we have 
+\begin{align*}
+j_{i-1} \circ \partial_i ([f])= [f_{| \partial P}: \partial P \to X] = 0,
+\end{align*}
+as a null-bordism over $X$ is given by $f$. For the other implication, consider $[g: Q \to A] \in \Omega_{i-1}^{\mathcal{L}}(A)$ with $j_{i-1}([g])=0$. If $G: W \to X$ is a corresponding null-bordism over $X$, it follows that
+\begin{align*}
+\partial_i([G: (W,Q) \to (X,A)]) = [g].
+\end{align*}
+\end{itemize}
 \end{proof}
 
 \chapter{The basic sets $Q_i^{\overline{p}}$}
