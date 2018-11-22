@@ -106,26 +106,7 @@ JOIN \\
 DIMENSION \\
 PL MANIFOLDS
 
-\begin{definition}
-A \textbf{0-dimensional PL stratified pseudomanifold} is a countable set of points with the discrete topology. An \textbf{n-dimensional PL stratified pseudomanifold} $X$ is a PL space together with a filtration of closed PL subspaces
-\begin{equation*}
-X=X_n \supset X_{n-1} = X_{n-2} \supset ... \supset X_0 \supset X_{-1} = \emptyset
-\end{equation*}
-such that the following conditions are satisfied:
-\begin{itemize}
-\item Every $X_{n-k} - X_{n-k-1}$ is a (possibly empty) PL manifold of dimension $n-k$.
-\item $X-X_{n-2}$ is dense in $X$.
-\item \textbf{Local normal triviality:} For every point $x \in X_{n-k} - X_{n-k-1}$ there exists an open neighborhood $U$ of $x$  in $X$ and a compact PL stratified pseudomanifold $L$ of dimension $k-1$ with filtration
-\begin{equation*}
-L = L_{k-1} \supset L_{k-3} \supset ... \supset L_0 \supset L_{-1}= \emptyset
-\end{equation*}
-and a PL isomorphism
-\begin{equation*}
-\phi : U \to \mathbb{R}^{n-k} \times c^{\circ} L
-\end{equation*}
-(where $c^{\circ}$ denotes the open cone) which restricts to PL isomorphism $\phi_| : U \cap X_{n-l} \to \mathbb{R}^{n-k} \times c^{\circ} L_{k-l-1}$. We say that $\phi$ is \textbf{stratum-preserving}.
-\end{itemize}
-\end{definition}
+
 
 
 
@@ -202,7 +183,7 @@ and call it the \textbf{$i$-th (absolute) $\mathcal{L}$-bordism set} with base $
 
 \begin{remark}
 \begin{itemize}
-\item[1.] There is an obvious notion of unoriented $\mathcal{L}$-bordism by removing all references to orientations.
+\item[1.] There is an obvious notion of unoriented $\mathcal{L}$-bordism by removing all references to orientations. We denote the associated bordism sets by $\Omega_i^{\underline{\mathcal{L}}}(X,A)$.
 \item[2.] For the absolute case, note that $\Omega_i^{\mathcal{L}}(X)$ consists of bordism classes of maps $f: P \to X$, where $P$ is a, necessarily closed $\mathcal{L}_i$-manifold. For some $g: Q \to X$, the bordism relation between $f$ and $g$ reduces to the existence of some compact, oriented $\mathcal{L}_{i+1}$-manifold $W$ with $\partial W \cong P \sqcup -Q$ and a map $F: W \to X$ s.t. $F_{|P}=f$ and $F_{|Q}=g$.
 \end{itemize}
 \end{remark}
@@ -249,7 +230,7 @@ is exact, for all $i$.
 \end{itemize}
 A generalized homology theory $(H_*, \partial_*)$ is called \textbf{ordinary} if the following additional requirement holds:
 \begin{itemize}
-\item[4.] \textbf{Dimension:} $H_i(pt.)=0$ for $i \neq 0$.
+\item[4.] \textbf{Dimension:} $H_i(pt.)=0$ for $i \neq 0$. Then $H_0(pt.)$ is called the \textbf{coefficient group} of $H_*$.
 \end{itemize}
 \end{definition}
 
@@ -268,7 +249,7 @@ First, if $\phi : (X,A) \to (Y,B) \in \boldsymbol{CW^2}$, then the induced map o
 \phi_* : \Omega_i^{\mathcal{L}}(X,A) &\to \Omega_i^{\mathcal{L}}(Y,B) \\
 [f] &\mapsto [\phi \circ f],
 \end{align*}
-which is well-defined since if $F$ is a bordism over $(X,A)$, then $\phi \circ F$ is a bordism over $(Y,B)$. Moreover, this construction respects the corresponding group structures, behaves functorial and we have $(id)_*=id$. The maps $\partial_i$ are natural, as composition of maps commutes with restriction to the boundary. 
+which is well-defined since if $F$ is a bordism over $(X,A)$, then $\phi \circ F$ is a bordism over $(Y,B)$. Moreover, this construction respects the corresponding group structures, behaves functorial and we have $(id)_*=id$. Similarly, $\partial_i$ is well-defined, as if $F:(W,Z) \to (X,A)$ is a bordism between $f$ and $g$ over $(X,A)$, then $F_{|Z}$ is a bordism between $f_{| \partial dom(f)}$ and $g_{| \partial dom(g)}$ over $A$. The maps $\partial_i$ are natural, as composition of maps commutes with restriction to the boundary. 
 \begin{itemize}
 \item[1.] Homotopy-invariance: Let $\phi, \psi : (X,A) \to (Y,B)$ be two homotopic maps via a homotopy $H$. For $[f] \in \Omega_i^{\mathcal{L}}(X,A)$, the map
 \begin{equation*}
@@ -319,15 +300,126 @@ j_{i-1} \circ \partial_i ([f])= [f_{| \partial P}: \partial P \to X] = 0,
 \end{align*}
 as a null-bordism over $X$ is given by $f$. For the other implication, consider $[g: Q \to A] \in \Omega_{i-1}^{\mathcal{L}}(A)$ with $j_{i-1}([g])=0$. If $G: W \to X$ is a corresponding null-bordism over $X$, it follows that
 \begin{align*}
-\partial_i([G: (W,Q) \to (X,A)]) = [g].
+\partial_i([G: (W,Q) \to (X,A)]) = [g],
 \end{align*}
 \end{itemize}
+which shows exactness of the sequence and completes the proof.
 \end{proof}
 
+Next, we will give examples of classes $\mathcal{L}$ that determine the corresponding bordism theory $\Omega_*^{\mathcal{L}}$.
+
+\begin{example}
+Consider the class of links $\mathcal{L}$, given by $\mathcal{L}_0 := \{ \emptyset \}$, $\mathcal{L}_n:= \{ X | X \cong S^{n-1} \}$ for $n \geq 1$. Then a closed $\mathcal{L}_n$-manifold is a polyhedron $M$ of dimension $n$, in which every vertex $v$ has a PL sphere as its link. Therefore $M$ is a closed PL manifold, as a small open neighborhood of $v$ is PL isomorphic to an open PL ball. Similarly, an $\mathcal{L}_n$-manifold with boundary is simply an $n$-dimensional PL manifold with boundary, and so the associated theory $\Omega_*^{\mathcal{L}}$ is "ordinary" (oriented) PL bordism theory, denoted by $\Omega_*^{PL}$.
+\end{example}
+
+\begin{example}
+We define a class of links $\mathcal{L}$ as follows: $\mathcal{L}_0 := \{ \emptyset \}$, $\mathcal{L}_1 := \{ X|X \cong S^0 \}$, and for $n \geq 2$ we let $\mathcal{L}_n$ be the class of \textbf{all} closed $\mathcal{L}_{n-1}$-manifolds. We would like to compute the coefficient group $\Omega_*^{\mathcal{L}}(pt.)$. For this, note that an $\mathcal{L}_0$-manifold is a disjoint union of points and an $\mathcal{L}_1$-manifold with boundary is a disjoint union of (closed) intervals. This means that a point does not bound in $\mathcal{L}$, and so generates 
+$\Omega_0^{\mathcal{L}}(pt.) \cong \mathbb{Z}.$ Moreover, if $P$ is a closed $\mathcal{L}_n$-manifold for $n \geq 1$, then $cP$ is an $\mathcal{L}_{n+1}$-manifold with boundary. Indeed, let $c$ denote the cone point. Then $Lk(c,cP)=P \in \mathcal{L}_{n+1}$ and if $v$ denotes some other vertex of $cP$, then $v$ lies in $P$ and if $L:=Lk(v,P)$, we have $Lk(v,cP)=cL$, which is the cone on a link in $\mathcal{L}_n$. This also shows, that the boundary of $cP$ consists of $P$, and so $P$ bounds in $\mathcal{L}$. We conclude $\Omega_n^{\mathcal{L}}(pt.)=0$ and denote the corresponding theory by $\Omega_*^{ord}$. Note that in the unoriented setting of the same class, the higher coefficient groups still vanish. But in difference to the oriented case, we have $\Omega_0^{\underline{\mathcal{L}}}(pt.)= \mathbb{Z}/2$, since the disjoint union of two points is then the boundary of an interval. We denote the unoriented theory associated to $\mathcal{L}$ by $\Omega_*^{ord}(-; \mathbb{Z}/2)$. As the previous two generalized homology theories additionally satisfy the dimension axiom, these represent ordinary homology theory with $\mathbb{Z}$- and $\mathbb{Z}/2$-coefficients, respectively.
+\end{example}
+
 \chapter{The basic sets $Q_i^{\overline{p}}$}
-In this chapter we will define and study the so called "basic sets", originally introduced by M. Goresky and R. McPherson in \cite{GM}. Given a stratified PL pseudomanifold $X$ and a perversity $\overline{p}$, we construct subpolyhedra $Q_i^{\overline{p}}$ of $X$ for every $i \geq 0$. They are designed to give a connection between ordinary homology groups of these basic sets and the intersection homology groups of the whole space $X$.
+In this chapter we will define and study the so called "basic sets", originally introduced by M. Goresky and R. McPherson in \cite{GM}. Given a stratified PL pseudomanifold $X$ and a perversity $\overline{p}$, we construct subpolyhedra $Q_i^{\overline{p}}$ of $X$ for every $i \geq 0$. They are designed to give a connection between ordinary homology groups of these basic sets and the intersection homology groups of the whole space $X$. \\
+We begin by giving a brief introduction to PL intersection homology theory.
+
+\begin{definition}
+A \textbf{0-dimensional PL stratified pseudomanifold} is a countable set of points with the discrete topology. An \textbf{n-dimensional PL stratified pseudomanifold} $X$ is a PL space together with a filtration of closed PL subspaces
+\begin{equation*}
+X=X_n \supset X_{n-1} = X_{n-2} \supset ... \supset X_0 \supset X_{-1} = \emptyset
+\end{equation*}
+such that the following conditions are satisfied:
+\begin{itemize}
+\item Every $X_{n-k} - X_{n-k-1}$ is a (possibly empty) PL manifold of dimension $n-k$.
+\item $X-X_{n-2}$ is dense in $X$.
+\item \textbf{Local normal triviality:} For every point $x \in X_{n-k} - X_{n-k-1}$ there exists an open neighborhood $U$ of $x$  in $X$ and a compact PL stratified pseudomanifold $L$ of dimension $k-1$ with filtration
+\begin{equation*}
+L = L_{k-1} \supset L_{k-3} \supset ... \supset L_0 \supset L_{-1}= \emptyset
+\end{equation*}
+and a PL isomorphism
+\begin{equation*}
+\phi : U \to \mathbb{R}^{n-k} \times c^{\circ} L
+\end{equation*}
+(where $c^{\circ}$ denotes the open cone) which restricts to PL isomorphism $\phi_| : U \cap X_{n-l} \to \mathbb{R}^{n-k} \times c^{\circ} L_{k-l-1}$. We say that $\phi$ is \textbf{stratum-preserving}.
+\end{itemize}
+A closed subset $X_{n-k}$ occuring in the filtration of $X$ is called \textbf{stratum} of codimension $k$. We call $X_{n-k}-X_{n-k-1}$ the \textbf{pure stratum} of codimension $k$.
+\end{definition}
+
+\begin{definition}
+Let $X$ be a PL space and $T$ be an admissible triangulation for $X$. A \textbf{simplicial $i$-chain} with respect to $T$ is a function
+\begin{align*}
+\xi : \{ \sigma \in T | \sigma \text{ is an oriented i-simplex} \}  \to \mathbb{Z}
+\end{align*}
+with $\xi (-\sigma)=- \xi(\sigma)$, where $-\sigma$ denotes the simplex $\sigma$ with opposite orientation. Let $C_i^{T}(X)$ denote the abelian group of all simplicial $i$-chains. Suppose $T' \lhd T$ is a subdivision. For $\xi \in C_i^T(X)$, we can assign a canonical element $\xi' \in C_i^{T'}(X)$ by 
+\begin{align*}
+\xi'(\sigma')= \begin{cases} 0, &\text{if $\sigma'$ is not contained in an $i$- simplex of T,} \\ \xi(\sigma), &\text{if $\sigma'$ is contained in the $i$-simplex $\sigma \in T.$} \end{cases}
+\end{align*}
+This yields a map
+\begin{align*}
+C_i^T(X) \to C_i^{T'}(X),
+\end{align*}
+which we call the canonical map. Now, define
+\begin{align*}
+C_i(X) := colim \ C_i^T(X),
+\end{align*}
+where the colimit ranges over all triangulations of the PL structure of $X$, with respect to the canonical maps. For any $i$, the simplicial boundary maps (see. \cite{hatcher}, ch.2)
+\begin{align*}
+\partial_i^T: C_i^T(X) \to C_{i-1}^T(X)
+\end{align*}
+give rise to boundary maps 
+\begin{align*}
+\partial_i : C_i(X) \to C_{i-1}(X).
+\end{align*}
+satisfying $\partial_i \circ \partial_{i-1}=0$. The associated homology groups
+\begin{align*}
+H_i^{BM}(X):= H_i(C_*(X))
+\end{align*}
+are called \textbf{Borel-Moore homology} groups of $X$.
+\end{definition}
+
+\begin{remark}
+Note that we do not impose finiteness assumptions on the chains of the Borel-Moore complex, as it is done for the ordinary chain complex.
+\end{remark}
+
+\begin{definition}
+A \textbf{perversity} is a function $\overline{p}: \mathbb{N}_{\geq 2} \to \mathbb{N}$ such that:
+\begin{itemize}
+\item $\overline{p}(2)=0$,
+\item $\overline{p}(k) \leq \overline{p}(k+1) \leq \overline{p}(k)+1$.
+\end{itemize}
+Given two perversities $\overline{p}, \overline{q}$, we write $\overline{p} \leq \overline{q}$ if $\overline{p}(k) \leq \overline{q}(k)$ for every $k$.
+\end{definition}
+
+\begin{example}
+There are at least four important perversities:
+\begin{itemize}
+\item The \textbf{zero perversity} $\overline{0}$, defined as $\overline{0}(k)=0$ for all $k$.
+\item The \textbf{lower-middle perversity} $\overline{m}= \{ 0,0,1,1,2,2,3,3,... \}$
+\item The \textbf{upper-middle perversity} $\overline{n}= \{ 0,1,1,2,2,3,3,... \}$
+\item The \textbf{top perversity} $\overline{t}$, given by $\overline{t}(k)=k-2$ for all $k$.
+\end{itemize}
+\end{example}
 
 
+For the rest of this chapter, let $X$ be a fixed PL stratified pseudomanifold of dimension $n$ with strata $X_{n-k}$  and let $\overline{p}$ be a perversity.
+
+\begin{definition}
+A subspace $Y \subset X$ is said to be \textbf{$(\overline{p},i)$-allowable} if $dim(Y) \leq i$ and $dim(Y \cap X_{n-k}) \leq i+(n-k)-n+ \overline{p}(k)=i-k+\overline{p}(k)$, for all $k$.
+\end{definition}
+
+\begin{definition}
+For a triangulation $T$ of $X$ and $\xi \in C_i^T(X)$ let $|\xi|$ denote the \textbf{support} of $\xi$, i.e. the union of those simplices $\sigma \in T$ with $\xi(\sigma) \neq 0$. Suppose $T' \lhd T$ is an admissible subdivision of $T$ and $\xi' \in C_i^{T}(X)$ is the image of $\xi$ under the canonical map. Then $|\xi|=|\xi'|$, and so any element $\alpha \in C_i(X)$ has a well-defined support $|\alpha|$.
+\end{definition}
+
+\begin{definition}
+Let $IC_i^{\overline{p}}(X)$ be the subgroup of $C_i(X)$ consisting of those chains $\xi$ such that $|\xi|$ is $(\overline{p},i)$-allowable and $|\partial \xi|$ is $(\overline{p},i-1)$-allowable. Then the boundary maps of the complex $C_*(X)$ restrict to boundary maps
+\begin{align*}
+\partial_i : IC_i^{\overline{p}}(X) \to IC_{i-1}^{\overline{p}}(X)
+\end{align*}
+by the constraint on the boundaries of elements in $IC_i^{\overline{p}}(X)$. Therefore, we have a chain complex $(IC_*^{\overline{p}}(X),\partial_*)$ and we define
+\begin{align*}
+IH_i^{\overline{p}}(X):=H_i(IC_*^{\overline{p}}(X))
+\end{align*}
+to be the $i$-th \textbf{intersection homology} group of $X$, for perversity $\overline{p}$.
+\end{definition}
 
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology.}

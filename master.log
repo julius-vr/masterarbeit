@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  20 NOV 2018 22:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  22 NOV 2018 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -776,22 +776,22 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
- [3] [4] [5] [6]
-Chapter 2.
-[7
+ [3] [4] [5] [6
 
 ]
+Chapter 2.
+[7]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no œ in font cmr10!
  <xymatrix 3x2 149>
-Overfull \hbox (4.29494pt too wide) in paragraph at lines 172--181
-[][]\OT1/cmr/bx/n/10.95 Definition 14. []\OT1/cmr/m/it/10.95 With the no-ta-tio
+Overfull \hbox (4.29494pt too wide) in paragraph at lines 153--162
+[][]\OT1/cmr/bx/n/10.95 Definition 13. []\OT1/cmr/m/it/10.95 With the no-ta-tio
 n as in the pre-vi-ous def-i-ni-tion, $\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/10.95
  : (\OML/cmm/m/it/10.95 P; @P\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 !
  []
 
 [8]
-Overfull \hbox (9.59325pt too wide) in paragraph at lines 184--185
+Overfull \hbox (9.59325pt too wide) in paragraph at lines 165--166
 [][]\OT1/cmr/bx/n/10.95 Proposition 2. []\OT1/cmr/m/it/10.95 The re-la-tion $\O
 MS/cmsy/m/n/10.95 ^^X[]$ \OT1/cmr/m/it/10.95 is an equiv-a-lence re-la-tion on 
 $\OML/cmm/m/it/10.95 Isom[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X; A\OT1/cmr
@@ -816,56 +816,66 @@ Overfull \hbox (1.77533pt too wide) has occurred while \output is active
 OLOGY THEORIES
  []
 
-[14
-
-]
+[14]
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 327.
+(hyperref)                removing `math shift' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 327.
+(hyperref)                removing `subscript' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 327.
+(hyperref)                removing `superscript' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@overline' on input line 327.
+(hyperref)                removing `\@@overline' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 327.
+(hyperref)                removing `math shift' on input line 320.
 
-[15] [16
+[15
+
+] [16]
+Overfull \hbox (1.50766pt too wide) in paragraph at lines 405--406
+[][]\OT1/cmr/bx/n/10.95 Definition 19. []\OT1/cmr/m/it/10.95 A sub-space $\OML/
+cmm/m/it/10.95 Y \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 X$ \OT1/cmr/m/it/1
+0.95 is said to be $\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; i\OT1/cmr/m/n/1
+0.95 )$\OT1/cmr/bx/it/10.95 -allowable \OT1/cmr/m/it/10.95 if $\OML/cmm/m/it/10
+.95 dim\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 ) \OMS/cmsy/
+m/n/10.95 ^^T
+ []
+
+[17] [18
 
 ]
-Underfull \hbox (badness 2818) in paragraph at lines 333--334
+Underfull \hbox (badness 2818) in paragraph at lines 425--426
 []\OT1/cmr/m/n/10.95 Colin Patrick Rourke, Brian Joseph Sander-son, \OT1/cmr/m/
 it/10.95 In-tro-duc-tion to
  []
 
-[17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 340.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
+[19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
  (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 340.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 25A7A980D261E1CE153DBF92BAA15F92;178.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 340.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 20113 strings out of 492982
- 368663 string characters out of 6134895
- 484635 words of memory out of 5000000
- 23248 multiletter control sequences out of 15000+600000
- 19825 words of font info for 76 fonts, out of 8000000 for 9000
+ 20131 strings out of 492982
+ 368842 string characters out of 6134895
+ 482635 words of memory out of 5000000
+ 23252 multiletter control sequences out of 15000+600000
+ 20779 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,15n,84p,3238b,996s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,19n,84p,3238b,996s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
@@ -887,10 +897,10 @@ ts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/xypic/xybtip10.pfb>
-Output written on master.pdf (17 pages, 269228 bytes).
+Output written on master.pdf (19 pages, 284321 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
  37 words of extra memory for PDF output out of 10000 (max. 10000000)
 
