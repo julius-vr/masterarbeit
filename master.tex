@@ -13,7 +13,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
-
+\newtheorem{corollar}{Corollary}
 
 
 \begin{document}
@@ -42,7 +42,7 @@ A \textbf{simplicial complex} $K$ is a set of simplices that satisfies the follo
 \item The intersection of any two simplices $\sigma, \tau \in K$ is either empty or a face of both $\sigma$ and $\tau$.
 \end{itemize}
 
-We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. The \textbf{p-skeleton} of $K$ is given by $K^{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex. We denote the set of vertices of $K$ by $V(K)$. The \textbf{dimension} of $K$ is the largest dimension of any simplex contained in $K$. If no such maximum exists, we say that $K$ is of dimension $\infty$. $K$ is said to be of \textbf{pure dimension} $n$ if every simplex of $K$ is a face of some $n$-simplex in $K$.
+We define the \textbf{plyhedron} of $K$ by $|K|:= \bigcup \{ \sigma | \sigma \in K \}$. A \textbf{subcomplex} of $K$ is a subset $L \subset K$ such that $L$ itself is a simplicial complex. The \textbf{p-skeleton} of $K$ is the subcomplex of $K$, given by $K_{(p)}= \{ \sigma \in  K | \text{dim}(\sigma) \leq p \}$. We denote the set of vertices of $K$ by $V(K)$. The \textbf{dimension} of $K$ is the largest dimension of any simplex contained in $K$. If no such maximum exists, we say that $K$ is of dimension $\infty$. $K$ is said to be of \textbf{pure dimension} $n$ if every simplex of $K$ is a face of some $n$-simplex in $K$.
 \end{definition}
 
 
@@ -67,7 +67,7 @@ Suppose that there are two simplicial complexes $K$ and $K'$ such that $|K| = |K
 
 
 \begin{example}
-Given a simplicial complex $K$ there is always an inductive process that produces a subdivision of $K$. Assume that $K^{(p-1)}$ has already been subdivided and let $\sigma=[v_0,...,v_p]$ be a $p$-simplex in $K$. The point $\hat{\sigma}=\frac{1}{p+1} \sum_{i=0}^p v_i$ lies in the interior of $\sigma$ and is called its \textbf{barycenter}. The \textbf{barycentric subdivision} of $\sigma$ is the decomposition of $\sigma$ into the $p$-simplices $[\hat{\sigma},w_0,...,w_{p-1}]$ where, inductively, $[w_o,...,w_{p-1}]$ is a $(p-1)$-simplex in the barycentric subdivision of a face $[v_0,...,\overline{v_i},...,v_p]$. (In this notation, the vertex $v_i$ is omitted.) Continuing this procedure for every $p$-simplex $\sigma$ leads to a decomposition of all simplices in $K^{(p)}$. The induction starts at $p=0$ when the barycentric subdivision of a $0$-simplex $[v_0]$ is just $[v_0]$ itself. It is guaranteed that this process delivers a subdivision $K^1 \lhd K$, called the \textbf{first barycentric subdivision} of $K$. For details, see \cite{hatcher}. More generally, the $r$-th barycentric subdivision is inductively given by $K^r=(K^{r-1})^1$.
+Given a simplicial complex $K$ there is always an inductive process that produces a subdivision of $K$. Assume that $K_{(p-1)}$ has already been subdivided and let $\sigma=[v_0,...,v_p]$ be a $p$-simplex in $K$. The point $\hat{\sigma}=\frac{1}{p+1} \sum_{i=0}^p v_i$ lies in the interior of $\sigma$ and is called its \textbf{barycenter}. The \textbf{barycentric subdivision} of $\sigma$ is the decomposition of $\sigma$ into the $p$-simplices $[\hat{\sigma},w_0,...,w_{p-1}]$ where, inductively, $[w_o,...,w_{p-1}]$ is a $(p-1)$-simplex in the barycentric subdivision of a face $[v_0,...,\overline{v_i},...,v_p]$. (In this notation, the vertex $v_i$ is omitted.) Continuing this procedure for every $p$-simplex $\sigma$ leads to a decomposition of all simplices in $K_{(p)}$. The induction starts at $p=0$ when the barycentric subdivision of a $0$-simplex $[v_0]$ is just $[v_0]$ itself. It is guaranteed that this process delivers a subdivision $K^1 \lhd K$, called the \textbf{first barycentric subdivision} of $K$. For details, see \cite{hatcher}. More generally, the $r$-th barycentric subdivision is inductively given by $K^r=(K^{r-1})^1$.
 \end{example}
 
 
@@ -319,7 +319,9 @@ $\Omega_0^{\mathcal{L}}(pt.) \cong \mathbb{Z}.$ Moreover, if $P$ is a closed $\m
 
 \chapter{The basic sets $Q_i^{\overline{p}}$}
 In this chapter we will define and study the so called "basic sets", originally introduced by M. Goresky and R. McPherson in \cite{GM}. Given a stratified PL pseudomanifold $X$ and a perversity $\overline{p}$, we construct subpolyhedra $Q_i^{\overline{p}}$ of $X$ for every $i \geq 0$. They are designed to give a connection between ordinary homology groups of these basic sets and the intersection homology groups of the whole space $X$. \\
-We begin by giving a brief introduction to PL intersection homology theory.
+We begin with a brief introduction to PL intersection homology theory.
+
+\section{Intersection Homology}
 
 \begin{definition}
 A \textbf{0-dimensional PL stratified pseudomanifold} is a countable set of points with the discrete topology. An \textbf{n-dimensional PL stratified pseudomanifold} $X$ is a PL space together with a filtration of closed PL subspaces
@@ -360,7 +362,7 @@ which we call the canonical map. Now, define
 \begin{align*}
 C_i(X) := colim \ C_i^T(X),
 \end{align*}
-where the colimit ranges over all triangulations of the PL structure of $X$, with respect to the canonical maps. For any $i$, the simplicial boundary maps (see. \cite{hatcher}, ch.2)
+where the colimit ranges over all triangulations of the PL structure of $X$, with respect to the canonical maps. In other words, $C_i(X)$ consists of equivalence classes, represented by elements $\xi \in C_i^T(X)$, where $\xi$ and $\xi' \in C_i^{T'}(X)$ are equivalent if there is a common admissible subdivision $T''$ of $T$ and $T'$, such that the images of $\xi$ and $\xi'$ under the canonical maps coincide in $C_i^{T''}(X)$. For any $i$, the simplicial boundary maps (see. \cite{hatcher}, ch.2)
 \begin{align*}
 \partial_i^T: C_i^T(X) \to C_{i-1}^T(X)
 \end{align*}
@@ -396,6 +398,7 @@ There are at least four important perversities:
 \item The \textbf{upper-middle perversity} $\overline{n}= \{ 0,1,1,2,2,3,3,... \}$
 \item The \textbf{top perversity} $\overline{t}$, given by $\overline{t}(k)=k-2$ for all $k$.
 \end{itemize}
+Two perversities $\overline{p}, \overline{q}$ are said to be \textbf{complementary} if $\overline{p}+ \overline{q}= \overline{t}$.
 \end{example}
 
 
@@ -414,12 +417,90 @@ Let $IC_i^{\overline{p}}(X)$ be the subgroup of $C_i(X)$ consisting of those cha
 \begin{align*}
 \partial_i : IC_i^{\overline{p}}(X) \to IC_{i-1}^{\overline{p}}(X)
 \end{align*}
-by the constraint on the boundaries of elements in $IC_i^{\overline{p}}(X)$. Therefore, we have a chain complex $(IC_*^{\overline{p}}(X),\partial_*)$ and we define
+by the constraint on the boundaries of elements in $IC_i^{\overline{p}}(X)$. Therefore, we have a chain complex $(IC_*^{\overline{p}}(X),\partial_*)$, and we define
 \begin{align*}
 IH_i^{\overline{p}}(X):=H_i(IC_*^{\overline{p}}(X))
 \end{align*}
 to be the $i$-th \textbf{intersection homology} group of $X$, for perversity $\overline{p}$.
 \end{definition}
+
+\section{Basic sets}
+
+For the PL stratified pseudomanifold $X^n$, we fix an admissible triangulation $T$ if not otherwise stated. By $T^1$, we denote the first barycentric subdivision of $T$ and the $p$-skeleton of $T$ is denoted by $T_{(p)}$, as usual.
+
+\begin{definition}
+For each $i \geq 0$ and fixed perversity $\overline{p}$ we define a function $L_i^{\overline{p}}: \{ 0,...,n+1 \} \to \mathbb{N}$ as follows: 
+\begin{align*}
+L_i^{\overline{p}}(0)=i,\ \ L_i^{\overline{p}}(1)=i-1,\ \ L_i^{\overline{p}}(n+1)=-1,
+\end{align*}
+and for $2 \leq c \leq n$ we let
+\begin{align*}
+L_i^{\overline{p}}(c)=
+\begin{cases}
+-1 &\text{ if $i-c+p(c) \leq -1$}  \\
+n-c &\text{ if $i-c+p(c) \geq n-c$ } \\
+i-c+p(c) &\text{ otherwise.}
+\end{cases}
+\end{align*}
+Furthermore, let $\Delta_i^{\overline{p}}(c)=L_i^{\overline{p}}(c) - L_i^{\overline{p}}(c+1)$. Then the \textbf{i-th basic set} $Q_i^{\overline{p}}$ of $X$ with respect to $T$ is the subcomplex of $T^1$, which is spanned by the following set of barycenters of simplices in $T$:
+\begin{align*}
+\{ \hat{\sigma} | \sigma \in T,\ \Delta_i^{\overline{p}}(n-dim(\sigma))=1\}
+\end{align*}
+\end{definition}
+
+From now on we will consider basic sets $Q_i^{\overline{p}}$ with respect to a fixed triangulation $T$ of $X$ without further mention.
+
+\begin{remark}\label{remarkbasic}
+\begin{itemize}
+\item[1.] Note that $L_i^{\overline{p}}(c)$ represents the largest possible dimension of intersection of any $(\overline{p},i)$-allowable set with $X_{n-c}$.
+\item[2.] Using the perversity restriction $\overline{p}(c) \leq \overline{p}(c+1) \leq \overline{p}(c)+1$, a simple case distinction shows that $\Delta_i^{\overline{p}}(c)$ is either $0$ or $1$.
+\item[3.] A similar distinction shows that if $\Delta_i^{\overline{p}}(c)=1$, then $\Delta_{i+1}^{\overline{p}}(c)=1$. We conclude that $Q_i^{\overline{p}}$ is a subcomplex of $Q_{i+1}^{\overline{p}}$.
+\end{itemize}
+\end{remark}
+
+\begin{prop}\label{dimensionbasicset}
+For any $k$-simplex $\sigma \in T$, we have 
+\begin{align*}
+dim(Q_i^{\overline{p}} \cap \sigma)= L_i^{\overline{p}}(n-k).
+\end{align*}
+\end{prop}
+
+\begin{proof}
+If $\sigma^1$ denotes the first barycentric subdivision of $\sigma$, then $Q_i^{\overline{p}} \cap \sigma$ is a subcomplex of $\sigma^1$, spanned by barycenters of faces $\tau < \sigma$ with $\Delta_i^{\overline{p}}(n-dim(\tau))=1$. If $\tau_0 < \tau_1 < ... < \tau_{k-1} < \tau_k:= \sigma$ is as sequence of faces, where each $\tau_j$ is a $j$-simplex, then under consideration of Rem.\ref{remarkbasic}.2. a top-dimensional simplex in $Q_i^{\overline{p}} \cap \sigma$ is spanned by 
+\begin{align*}
+\sum_{j=0}^k \Delta_i^{\overline{p}}(n-dim(\tau_j)) = \sum_{j=0}^k \Delta_i^{\overline{p}}(n-j &)= L_i^{\overline{p}}(n-k) - L_i^{\overline{p}}(n+1) \\ &=L_i^{\overline{p}}(n-k) +1
+\end{align*}
+vertices, and so $dim(Q_i^{\overline{p}} \cap \sigma)= L_i^{\overline{p}}(n-k).$
+\end{proof}
+
+\begin{corollar}
+$Q_i^{\overline{p}}$ is of dimension $i$.
+\end{corollar}
+
+\begin{proof}
+For any $n$-simplex $\sigma \in T$, we have $dim(Q_i^{\overline{p}} \cap \sigma)=L_i^{\overline{p}}(0)=i$.
+\end{proof}
+
+\begin{lemma}
+For complementary perversities $\overline{p}$ and $\overline{q}$, the equation
+\begin{align*}
+L_i^{\overline{p}}(c) + L_{n-i+1}^{\overline{q}}(c)=n-c-1
+\end{align*}
+holds for $2 \leq c \leq n+1$.
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
+For $i \geq 1$ and complementary perversities $\overline{p}$ and $\overline{q}$ there are simplex-preserving deformation retractions
+\begin{align*}
+&X-(Q_{n-i+1}^{\overline{q}} \cap |T_{(n-2)}|) \to Q_i^{\overline{p}} , \\
+&X- Q_{n-i+1}^{\overline{q}} \to Q_i^{\overline{p}} \cap |T_{(n-2)}|.
+\end{align*}
+\end{prop}
+
 
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology.}
