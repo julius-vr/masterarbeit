@@ -6,4 +6,4 @@
 \contentsline {section}{\numberline {3.2}Basic sets}{14}{section.3.2}
 \contentsline {chapter}{\numberline {4}A bordism approach to intersection homology theories}{18}{chapter.4}
 \contentsline {section}{\numberline {4.1}General position}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Intersection bordism}{18}{section.4.2}
+\contentsline {section}{\numberline {4.2}Intersection bordism}{19}{section.4.2}

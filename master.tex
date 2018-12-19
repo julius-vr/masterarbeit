@@ -317,7 +317,7 @@ We define a class of links $\mathcal{L}$ as follows: $\mathcal{L}_0 := \{ \empty
 $\Omega_0^{\mathcal{L}}(pt.) \cong \mathbb{Z}.$ Moreover, if $P$ is a closed $\mathcal{L}_n$-manifold for $n \geq 1$, then $cP$ is an $\mathcal{L}_{n+1}$-manifold with boundary. Indeed, let $c$ denote the cone point. Then $Lk(c,cP)=P \in \mathcal{L}_{n+1}$ and if $v$ denotes some other vertex of $cP$, then $v$ lies in $P$ and if $L:=Lk(v,P)$, we have $Lk(v,cP)=cL$, which is the cone on a link in $\mathcal{L}_n$. This also shows, that the boundary of $cP$ consists of $P$, and so $P$ bounds in $\mathcal{L}$. We conclude $\Omega_n^{\mathcal{L}}(pt.)=0$ and denote the corresponding theory by $\Omega_*^{ord}$. Note that in the unoriented setting of the same class, the higher coefficient groups still vanish. But in difference to the oriented case, we have $\Omega_0^{\underline{\mathcal{L}}}(pt.)= \mathbb{Z}/2$, since the disjoint union of two points is then the boundary of an interval. We denote the unoriented theory associated to $\mathcal{L}$ by $\Omega_*^{ord}(-; \mathbb{Z}/2)$. As the previous two generalized homology theories additionally satisfy the dimension axiom, these represent ordinary homology theory with $\mathbb{Z}$- and $\mathbb{Z}/2$-coefficients, respectively.
 \end{example}
 
-\chapter{The basic sets $Q_i^{\overline{p}}$}
+\chapter{The basic sets $Q_i^{\overline{p}}$}\label{basicsetschapter}
 In this chapter we will define and study the so called "basic sets", originally introduced by M. Goresky and R. McPherson in \cite{GM}. Given a stratified PL pseudomanifold $X$ and a perversity $\overline{p}$, we construct subpolyhedra $Q_i^{\overline{p}}$ of $X$ for every $i \geq 0$. They are designed to give a connection between ordinary homology groups of these basic sets and the intersection homology groups of the whole space $X$. \\
 We begin with a brief introduction to PL intersection homology theory.
 
@@ -552,7 +552,7 @@ is an isomorphism for any $i \geq 0$.
 See \cite{GM}, p.148. The proof makes use of the retractions from Prop.\ref{retractions}. We omit it as we use a similar technique later.
 \end{proof}
 
-\begin{corollar}
+\begin{corollar}\label{IHindependentstrat}
 The groups $IH_i^{\overline{p}}(X)$ are independent of the stratification of $X$.
 \end{corollar}
 
@@ -560,7 +560,7 @@ The groups $IH_i^{\overline{p}}(X)$ are independent of the stratification of $X$
 For two stratifications of $X$, there is a triangulation $T$ of $X$ subordinate to both. If we construct the basic sets with respect to $T$, the previous theorem applies and shows that for either stratification, $IH_i^{\overline{p}}(X)$ is isomorphic to $Im(H_i(Q_{i}^{\overline{p}}) \to H_i(Q_{i+1}^{\overline{p}}))$.
 \end{proof}
 
-\begin{corollar}\label{IHindependentstrat}
+\begin{corollar}
 If $T$ is an arbitrary triangulation of $X$ and if the $Q_i^{\overline{p}}$ are defined with respect to $T$, then
 \begin{align*}
 IH_i^{\overline{p}}(X) \cong Im(H_i(Q_{i}^{\overline{p}}) \to H_i(Q_{i+1}^{\overline{p}})).
@@ -578,16 +578,23 @@ for $X$, and clearly $T$ is subordinate to this stratification. Now Cor.$\ref{IH
 Note that the connection of ordinary homology and intersection homology that appears in Thm.\ref{theorembasicsets} gives another interpretation of intersection homology without making use of the intersection chain complex. The price one has to pay is the complicated construction of the basic sets. Nevertheless, this seems to be a good starting point to implement generalized intersection homology theories.
 
 \chapter{A bordism approach to intersection homology theories}\label{IOmega}
-Throughout this chapter, let $X$ be a PL stratified pseudomanifold and let $\overline{p}$ be a fixed perversity, unless stated otherwise. The $k$-th stratum of $X$ is denoted by $X_k$, as usual. Moreover, we denote the pure strata of $X$ by $\mathcal{X}_k:= X_k - X_{k-1}$.
+Throughout this chapter, let $X$ be a PL stratified pseudomanifold of dimension $n$ and let $\overline{p}$ be a fixed perversity, unless stated otherwise. The $k$-th stratum of $X$ is denoted by $X_k$, as usual. Moreover, we denote the pure strata of $X$ by $\mathcal{X}_k:= X_k - X_{k-1}$.
 
 \section{General position}
 
 \begin{definition}
-Let $A,B \subset X$ two PL subspaces. Then $A$ and $B$ are said to be in \textbf{general position} in the stratification of $X$ if
+Assume that $A$ and $B$ are two PL subspaces of an $n$-dimensional PL manifold $M$. We say that $A$ and $B$ are in \textbf{general position} in $M$ if 
+\begin{align*}
+dim(A \cap B) \leq dim(A) + dim(B) - n.
+\end{align*}
+\end{definition}
+
+\begin{definition}
+Let $A,B \subset X$ two PL subspaces. Then $A$ and $B$ are said to be in \textbf{general position in the stratification } of $X$ if
 \begin{align*}
 dim(A \cap B \cap \mathcal{X}_k) \leq dim(A \cap \mathcal{X}_k) + dim(B \cap \mathcal{X}_k) -k
 \end{align*}
-for all $k$.
+for all $k$, i.e. if $A \cap \mathcal{X}_k$ and $B \cap \mathcal{X}_k$ are in general position in $\mathcal{X}_k$, for each $k$.
 \end{definition}
 
 \begin{theorem}
@@ -598,19 +605,25 @@ Let $A,B,C \subset X$ be closed PL subspaces with $C \subset B$. Given $\epsilon
 \item[3.] $H(x,0)=x$ for all $x \in X$,
 \item[4.] $H((B-C) \times \{ 1 \})$ and $A$ are in general position in the stratification of $X$.
 \end{itemize}
-In other words, $B-C$ can be moved into general position with respect to $A$ by an arbitrarily small isotopy, without touching $A$ and $C$.
+In other words, $B-C$ can be moved into general position with respect to $A$ by an arbitrarily small isotopy, keeping $A$ and $C$ untouched.
 \end{theorem}
 
 \begin{proof}
-See \cite{mccrory}.
+See \cite{mccrory}. In \cite{zeeman}, ch.6, Zeeman introduces a technique which he calls "local shifts" to move a subpolyhedron $B$ of a PL manifold $M$ into general position with respect to some other subpolyhedron $A$ of $M$. Roughly speaking, a local shift of a simplex $\sigma \subset B$ is an arbitrarily small move (isotopy) of the closed star of $\sigma$ in $M$, in a way that the boundary of $\sigma$ remains unaltered. The latter property guarantees that these local shifts extend to a global isotopy, which is arbitrarily small and which keeps $C$ and $X-(B-C)$ fixed. McCrory picks up this idea and shows in a finite induction on the strata, that the isotopies on the pure strata - in terms of local shifts - give rise to an isotopy $H$ on $X$ with the desired properties. Moreover, the local definition of $H$ ensures that 
+\begin{align*}
+dim(H(\sigma \times I)) \leq dim(\sigma)+1,
+\end{align*}
+for each simplex $\sigma \subset X$, since either $H_{|\sigma \times \{ s \}}=id$ for all $s$ (namely if $\sigma$ is contained in $X-(int(B-C))$ or if $\sigma$ is already in general position with respect to $A$), or $\sigma \subset B-C$ is moved by a local shift, in which case we have $dim(H(\sigma \times I))=dim(\sigma)+1$.
 \end{proof}
+
+BEWEIS DARUEBER: ARGUMENTE
 
 \section{Intersection bordism}
 
 DIMENSION DEF. DARUNTER
  
 \begin{definition}
-For a PL space $P$, a map $f: P \to X$ is called \textbf{($\boldsymbol{\overline{p}}$,i)-allowable} if 
+For a PL space $P$, a PL map $f: P \to X$ is called \textbf{($\boldsymbol{\overline{p}}$,i)-allowable} if 
 \begin{align*}
 dim(f(P) \cap X_{n-k}) \leq i-k+ \overline{p}(k)
 \end{align*}
@@ -632,14 +645,20 @@ dim(g(Q) \cap X_{n-k}) = dim(f \circ h^{-1} (Q) \cap X_{n-k})=dim(f(P) \cap X_{n
 \end{remark}
 
 \begin{definition}
-Let $\mathcal{L}$ be a theory with singularities (as in ch.\ref{bordismhomology}). Given two $\mathcal{L}_i$-manifolds $P,Q$ and maps $f: P \to X$ and $g: Q \to X$, we say that $f$ and $g$ are \textbf{oriented ($\boldsymbol{\overline{p}}$,i+1)-bordant} if $f$ and $g$ are bordant (in the sense of Def.$\ref{bordismusdef}$) via an oriented $({\overline{p}}$,i+1)-allowable bordism. In this situation, we write $f \sim_{i+1}^{\overline{p}} g$.
+Let $\mathcal{L}$ be a theory with singularities (as in ch.\ref{bordismhomology}). Given two $\mathcal{L}_i$-manifolds $P,Q$ and PL maps $f: P \to X$ and $g: Q \to X$, we say that $f$ and $g$ are \textbf{oriented ($\boldsymbol{\overline{p}}$,i+1)-bordant} if $f$ and $g$ are bordant (in the sense of Def.$\ref{bordismusdef}$) via an oriented $({\overline{p}}$,i+1)-allowable PL bordism. In this situation, we write $f \sim_{i+1}^{\overline{p}} g$.
 \end{definition}
 
 \begin{definition}
-If $\mathcal{L}$ is a theory with singularities, let $Isom_i^{\mathcal{L}, \overline{p}}(X)$ denote the set of isomorphism classes of maps $f: P \to X$ which are oriented $(\overline{p},i+1)$-bordant to a $(\overline{p},i)$-allowable map, where $P$ varies over all closed, compact, oriented $\mathcal{L}_i$- manifolds.
+If $\mathcal{L}$ is a theory with singularities, let $Isom_i^{\mathcal{L}, \overline{p}}(X)$ denote the set of isomorphism classes of PL maps $f: P \to X$ which are oriented $(\overline{p},i+1)$-bordant to some $(\overline{p},i)$-allowable PL map, where $P$ varies over all closed, compact, oriented $\mathcal{L}_i$- manifolds.
 \end{definition}
 
+\begin{lemma}\label{producttriangulation}
+If $K$ is a simplicial complex, then there exists a triangulation of $|K| \times I$ whose set of vertices consists of precisely two vertices $(v,0), (v,1)$ for each vertex $v$ in $K$.
+\end{lemma}
 
+\begin{proof}
+Let $\sigma=[v_0,...,v_k]$ be a simplex in $K$. Then $\sigma \times I$ has $A_0=(v_0,0),...,A_k=(v_k,0)$ and $B_0=(v_0,1),...,B_k=(v_k,1)$ as vertices. For each $0 \leq i \leq k$, consider simplices of the form $[A_0,...,A_i,B_i,...,B_k]$. Then the complex generated by those simplices delivers a triangulation of $| \sigma| \times I$. Proceedig this way for every $\sigma \in K$, we obtain a triangulation of $|K| \times I$ with the desired properties.
+\end{proof}
 \begin{prop}\label{intersectioneqrelation}
 $\sim_{i+1}^{\overline{p}}$ is an equivalence relation on $Isom_i^{\mathcal{L}, \overline{p}}(X)$.
 \end{prop}
@@ -649,17 +668,17 @@ Let $[f] \in Isom_i^{\mathcal{L}, \overline{p}}(X)$. Then $f$ is $(\overline{p},
 \begin{align*}
 dim(im(f) \cap X_{n-k}) = dim(im(F_{|dom(f)}) \cap X_{n-k}) &\leq dim(im(F) \cap X_{n-k}) \\ &\leq i+1-k+ \overline{p}(k).
 \end{align*}
-So, $f$ is $(\overline{p},i+1)$-allowable and we can define a $(\overline{p},i+1)$-allowable map \begin{align*}
-F: dom(f) \times I \to X
-\end{align*} by setting $F(x,s)=f(x)$. We have $\partial(dom(f) \times I)= dom(f) \times \{ 0 \} \sqcup -dom(f) \times \{  1 \}$, and clearly $F_{|dom(f) \times \{  0 \} }=F_{|dom(f) \times \{  1 \} } = f$. This proves reflexivity of the relation. For symmetry, note once more that disjoint union commutes up to isomorphism. To see transitivity, let $f \sim_{i+1}^{\overline{p}} g$ and $g \sim_{i+1}^{\overline{p}} h$ via bordisms $F$ and $G$, respectively. Let
+So, $f$ is $(\overline{p},i+1)$-allowable and we can define a $(\overline{p},i+1)$-allowable PL map \begin{align*}
+G: dom(f) \times I \to X
+\end{align*} as follows. First since $f$ is PL, we can triangulate $dom(f)$ and $X$ in such a way that $f$ is simplicial with respect to these triangulations. Considering this triangulation of $dom(f)$, triangulate $dom(f) \times I$ like in Lemma $\ref{producttriangulation}$. Then, for each vertex $v$ of $dom(f)$, set $G(v,0)=G(v,1)=f(v)$ and extend linearly over the simplices of $dom(f) \times I$. We have $\partial(dom(f) \times I)= dom(f) \times \{ 0 \} \sqcup -dom(f) \times \{  1 \}$, and clearly $G_{|dom(f) \times \{  0 \} }=G_{|dom(f) \times \{  1 \} } = f$. This proves reflexivity of the relation. For symmetry, note once more that disjoint union commutes up to PL isomorphism. To see transitivity, let $f \sim_{i+1}^{\overline{p}} g$ and $g \sim_{i+1}^{\overline{p}} h$ via bordisms $F$ and $G$, respectively. Let
 \begin{align*}
 H: dom(F) \cup_{dom(g)} dom(G) \to X
 \end{align*}
-be the unique map with $H_{|dom(F)}=F$ and $H_{|dom(G)}=G$, obtained by glueing along $dom(g)$. Then $H$ is $(\overline{p},i+1)$-allowable, since
+be the unique map with $H_{|dom(F)}=F$ and $H_{|dom(G)}=G$, obtained by glueing along $dom(g)$. By assumption, $F$ and $G$ are PL, and so is $H$. Moreover, $H$ is $(\overline{p},i+1)$-allowable, since
 \begin{align*}
 dim(im(H) \cap X_{n-k}) &= dim((im(F) \cup im(G)) \cap X_{n-k})\\ & = dim(im(F) \cap X_{n-k} \cup im(G) \cap X_{n-k}) \\ &= max(dim(im(F) \cap X_{n-k}), dim(im(G) \cap X_{n-k})) \\ &\leq i+1-k+ \overline{p}(k),
 \end{align*}
-where the last inequality holds as $F$ and $G$ are both $(\overline{p},i+1)$-allowable. This completes the proof.
+where the last inequality holds as $F$ and $G$ are both $(\overline{p},i+1)$-allowable. We conclude $f \sim_{i+1}^{\overline{p}} h$ via $H$, which completes the proof.
 \end{proof}
 
 \begin{definition}
@@ -674,14 +693,34 @@ $I \Omega_i^{\mathcal{L}, \overline{p}}(X) $ is an abelian group with respect to
 \end{prop}
 
 \begin{proof}
-Let $[f],[g] \in I \Omega_i^{\mathcal{L}, \overline{p}}(X) $ with $f$ and $g$ both $(\overline{p},i)$-allowable. Then $f \sqcup g$ is $(\overline{p},i)$-allowable for the same reason as in the proof of transitivity in Prop.$\ref{intersectioneqrelation}$. This argument also shows that $\sqcup$ is a well-defined operation in $I \Omega_i^{\mathcal{L}, \overline{p}}(X)$: Let $f' \in [f],g' \in [g]$ be different representatives. Then there are bordisms $F$ between $f$ and $f'$, $G$ between $g$ and $g'$, both $(\overline{p},i+1)$-allowable. This leads to a $(\overline{p},i+1)$-allowable bordism $F \sqcup G$ between $f \sqcup g$ and $f' \sqcup g'$, and so it makes sense to define $[f] \sqcup [g]:=[f \sqcup g]$. As usual, the zero element is given by $[\emptyset \to X]$ and the inverse of $[f: P \to X]$ is $[f: -P \to X]$. Associativity and commutativity clearly hold.
+Let $[f],[g] \in I \Omega_i^{\mathcal{L}, \overline{p}}(X) $ with $f$ and $g$ both $(\overline{p},i)$-allowable. Then $f \sqcup g$ is $(\overline{p},i)$-allowable for the same reason as in the proof of transitivity in Prop.$\ref{intersectioneqrelation}$. This argument also shows that $\sqcup$ is a well-defined operation in $I \Omega_i^{\mathcal{L}, \overline{p}}(X)$: Let $f' \in [f],g' \in [g]$ be different representatives. Then there are PL bordisms $F$ between $f$ and $f'$, $G$ between $g$ and $g'$, both $(\overline{p},i+1)$-allowable. This leads to a $(\overline{p},i+1)$-allowable PL bordism $F \sqcup G$ between $f \sqcup g$ and $f' \sqcup g'$, and so it makes sense to define $[f] \sqcup [g]:=[f \sqcup g]$. As usual, the zero element is given by $[\emptyset \to X]$ and the inverse of $[f: P \to X]$ is $[f: -P \to X]$. Associativity and commutativity clearly hold.
 \end{proof}
 
 \begin{remark}
-Note that we did not use the specific structure of $\mathcal{L}$ to define intersection bordism groups, i.e. whenever it makes sense to talk about a bordism relation on a class of polyhedra (e.g. as in $\cite{stong}$), we can assign a corresponding intersection bordism theory to it in an analogous manner as above. 
+Note that we did not use the specific structure of $\mathcal{L}$ to define intersection bordism groups, i.e. whenever it makes sense to talk about a bordism relation on a class of compact polyhedra (e.g. as in $\cite{stong}$), we can assign a corresponding intersection bordism theory to it in an analogous manner as above. 
 \end{remark}
 
+Now, let $\mathcal{L}$ be a theory with singularities and let $T$ be a triangulation of $X$, subordinate to the stratification. Define the basic sets $Q_i^{\overline{p}}$ with respect to $T$, as in chapter $\ref{basicsetschapter}$. Since $\Omega_i^{\mathcal{L}}$ is a functor for each $i$, the inclusions $Q_i^{\overline{p}} \subset Q_{i+1}^{\overline{p}}$ induce maps
+\begin{align*}
+\Omega_i^{\mathcal{L}}(Q_{i}^{\overline{p}}) \to \Omega_i^{\mathcal{L}}(Q_{i+1}^{\overline{p}}).
+\end{align*}
+An element in $Im(\Omega_i^{\mathcal{L}}(Q_{i}^{\overline{p}}) \to \Omega_i^{\mathcal{L}}(Q_{i+1}^{\overline{p}}))$ is represented by a map $f: P \to Q_{i+1}^{\overline{p}}$, where $P$ is a closed $\mathcal{L}_i$-manifold and such that there exist a closed $\mathcal{L}_i$-manifold $R$, an $\mathcal{L}_{i+1}$-manifold $W$ with $\partial W \cong P \sqcup -R$, and a bordism $F: W \to Q_{i+1}^{\overline{p}}$ with $F_{|P}=f$ and $g:=F_{|R}: R \to Q_{i}^{\overline{p}}$. We may assume $g$ to be PL, otherwise the simplicial approximation theorem guarantees the existence of a homotopy (and thus a bordism) over $Q_i^{\overline{p}}$ which moves $g$ into a PL map. Moreover, if $g'$ is another PL map which is bordant to $g$, then the corresponding bordism may be assumed to be PL, again by simplicial approximation. By Prop.$\ref{basicsetsallowable}$, $g$ is $(\overline{p},i)$-allowable and the bordism between $g$ and $g'$ is $(\overline{p},i+1)$-allowable. Thus, we have a well-defined homomorphism
+\begin{align*}
+\Phi : Im(\Omega_i^{\mathcal{L}}(Q_{i}^{\overline{p}}) \to \Omega_i^{\mathcal{L}}(Q_{i+1}^{\overline{p}})) \to I\Omega_i^{\mathcal{L}, \overline{p}}(X)
+\end{align*}
+by sending $[g]$ to the corresponding class in $I\Omega_i^{\mathcal{L}, \overline{p}}(X)$ that is represented by $g$.
 
+\begin{theorem}
+In the above setting, the map
+\begin{align*}
+\Phi : Im(\Omega_i^{\mathcal{L}}(Q_{i}^{\overline{p}}) \to \Omega_i^{\mathcal{L}}(Q_{i+1}^{\overline{p}})) \to I\Omega_i^{\mathcal{L}, \overline{p}}(X)
+\end{align*}
+is an isomorphism for $i \geq 1$.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
 
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
