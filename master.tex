@@ -94,26 +94,50 @@ Note that a simplicial map $f: K \to L$ is given by linear extension of a (set-t
 A \textbf{simplicial isomorphism} between two simplicial complexes $K$ and $L$ is given by a bijection $f : V(K) \to V(L)$ such that $[v_0,...,v_k]$ is a $k$-simplex in $K$ if and only if $[f(v_0),...,f(v_k)]$ is a $k$-simplex in $L$. In particular, extending $f$ linearly yields a homeomorphism between the underlying polyhedra $|K|$ and $|L|$. A map $g: |K| \to |L|$ between PL spaces is a \textbf{PL isomorphism} if there exist subdivisions $K' \lhd K$ and $L' \lhd L$ such that $g: |K'| \to |L'|$ is a simplicial isomorphism.
 \end{definition}
 
+\begin{prop}\label{imageplmappolyhedron}
+Let $f: |K| \to |L|$ be a PL map, where $|K|$ is compact. Then $f(|K|)$ is a compact polyhedron.
+\end{prop}
+
+\begin{proof}
+See \cite{pltopo}, chapter 2.
+\end{proof}
+
 \begin{theorem}(Simplicial Approximation Theorem).
 Let $f: |K| \to |L|$ be a map between polyhedra. Then there exist subdivisions $K' \lhd K$ and $L' \lhd L$ and a simplicial map $g: |K'| \to |L'|$ which is $\epsilon$-homotopic to $f$, i.e. if $\epsilon: |L| \to (0,\infty)$ is a map, then there is a map $H: |K| \times [0,1] \to |L|$ with $H(|K| \times \{ 0\})=f$, $H(|K| \times \{ 1\})=g$ and diam$(H(\{ x \} \times [0,1])) < \epsilon(f(x))$.
 \end{theorem}
 
 \begin{proof}
-See \cite{lecturenotes}, e.g.
+See \cite{lecturenotes}, chapter 4.
 \end{proof}
 
-JOIN \\
-DIMENSION \\
-PL MANIFOLDS
+\begin{definition}
+Let $K,L$ be simplicial complexes. Their \textbf{join} $K*L$ is defined to be the simplicial complex with underlying vertex set $V(K*L)=V(K) \cup V(L)$ and whose simplices are of the form $[v_0,...,v_k,w_0,...,w_l]$ , where $[v_0,...,v_k] \in K, [w_0,...w_l] \in L$. In particular, we define $cK := pt. * K$ to be the \textbf{cone} on $K$ and we call $SK:=S^0 * K$ the \textbf{suspension} of $K$.
+\end{definition}
 
+\begin{prop}\label{subdivisionlink}
+For a simplicial complex $K$, let $v \in K$ be a vertex and let $K' \lhd K$ be a subdivision. Then, $Lk(v,K)$ and $Lk(v,K')$ are PL isomorphic.
+\end{prop}
 
+\begin{proof}
+See $\cite{hudson}$, p.23.
+\end{proof}
 
+\begin{definition}
+Let $X$ be a PL space with triangulation $T$ and let $v \in X$ be a point. By subdividing $T$ if necessary, we may assume that $v$ is a vertex of $T$. We define $Lk(v,X)$ to be the PL isomorphism class of $Lk(v,T)$. If $T'$ is another triangulation of $X$ which contains $v$, then there is a triangulation $T''$ with $T'' \lhd T$ and $T'' \lhd T'$, and by Prop.\ref{subdivisionlink} we have
+\begin{align*}
+Lk(v,T) \cong Lk(v,T'') \cong Lk(v,T').
+\end{align*}
+Thus, the \textbf{link} $Lk(v,X)$ is well-defined.
+\end{definition}
 
+\begin{definition}
+An n-dimensional \textbf{PL manifold} is a PL space $M$ such that the link of each point $x \in M$ is PL isomorphic to an $(n-1)$-dimensional sphere. An n-dimensional \textbf{PL manifold with boundary} is a PL space $W$ such that the link of each point $x \in W$ is PL isomorphic to either an $(n-1)$-dimensional sphere or to an $(n-1)$-dimensional ball.
+\end{definition}
 
 
 
 \chapter{A bordism approach to homology theories}\label{bordismhomology}
-The purpose of this chapter is to give a geometric treatment of homology theories, as described by S. Buoncristiano, C. Rourke and B. Sanderson in \cite{BRS}. First we use local link properties to determine a class of polyhedra. Then, in an analagous manner to ordinary bordism theory, we define groups of bordism classes of maps, whose domains lie in the polyhedral class defined before. We observe that interesting examples of generalized homology theories can be interpreted in this way, including ordinary homology, ($\mathbb{Z}/2$)-homology and PL bordism theory. \newline
+The purpose of this chapter is to give a geometric treatment of homology theories, as described by S. Buoncristiano, C. Rourke and B. Sanderson in \cite{BRS}. First we use local link properties to determine a class of polyhedra. Then, in an analogous manner to ordinary bordism theory, we define groups of bordism classes of maps, whose domains lie in the polyhedral class defined before. We observe that interesting examples of generalized homology theories can be interpreted in this way, including ordinary homology, ($\mathbb{Z}/2$)-homology and PL bordism theory. \newline
 For the rest of this chapter we make the convention that every polyhedron is PL and of pure dimension.
 
 \begin{definition}
@@ -139,11 +163,7 @@ Let $W$ be an $\mathcal{L}_n$-manifold with boundary in a fixed theory with sing
 By the third requirement of Def.\ref{theory}, the link of a vertex in $W$ is contained in $c \mathcal{L}_{n-1}$ if and only if it is not contained in $\mathcal{L}_n$. This shows that $\partial W$ is well-defined. For the second statement, note that $\partial W$ is a subpolyhedron by definition and that if $v$ is a vertex in $\partial W$ with $Lk(v,W)=cL$ for some $L \in \mathcal{L}_{n-1}$, then $Lk(v,\partial W) = L$.
 \end{proof}
 
-DEFINITION ÜBERARBEITEN: \\
-LINKS STABIL BZGL SUBDIVISION? \\
-KOMPAKTE POLYEDER \\
-ORIENTIERUNGEN \\
-EVTL ORIENTIERUNGSERHALTENDE ISOMORPHISMEN 
+ORIENTIERUNGEN! \\
 
 \begin{definition}\label{bordismusdef}
 Let $\mathcal{L}$ be a theory with singularities and let $(X,A)$ be a pair of topological spaces (i.e. $A \subset X$ is a subspace). For two compact, oriented $\mathcal{L}_i$-manifolds (possibly with boundary) $P,Q$  assume that we are given continuous maps $f:(P, \partial P) \to (X,A)$ and $g:(Q , \partial Q) \to (X,A)$. An \textbf{oriented bordism} between $f$ and $g$ is a triple $(F,W,Z)$, where $W$ is a compact, oriented $\mathcal{L}_{i+1}$-manifold with boundary, s.t. $\partial W \cong P \sqcup -Q \cup Z$, $Z$ is a compact, oriented $\mathcal{L}_i$-manifold (possibly with boundary), s.t. $\partial Z\cong \partial P \sqcup - \partial Q$ and $F: (W,Z) \to (X,A)$ is a continuous map with $F _{|P} = f$ and $F_{|Q}=g$. If there exists a bordism between them, $f$ and $g$ are said to be \textbf{bordant} and we abbreviate this by writing $f \sim_{bord} g$. We call $F$ a \textbf{null-bordism} for $f$ if $Q= \emptyset$ and we say that $f$ is \textbf{null-bordant} if there exists a null-bordism for $f$.
@@ -205,12 +225,12 @@ and so the inverse of $[f]$ is given by $[-f]$. In the unoriented setting, we ca
 The previous Proposition allows us to speak of bordism groups, rather than of bordism sets and we adapt this terminology for the rest of this discussion. \newline So far, we did not explain connections of $\mathcal{L}$-bordism groups for varying base spaces. This will be done in the following.
 
 \begin{definition}
-Let $\boldsymbol{CW^2}$ denote the category of pairs of finite CW spaces with continuous maps between them and let $\boldsymbol{AbGrp}$ be the category of abelian groups with group homomorphisms between them. Moreover, let $T$ denote the covariant functor on $\boldsymbol{CW^2}$, given by
+Let $\boldsymbol{CW^2}$ denote the category of pairs of finite CW spaces with continuous maps between them and let $\boldsymbol{Ab}$ be the category of abelian groups with group homomorphisms between them. Moreover, let $T$ denote the covariant functor on $\boldsymbol{CW^2}$, given by
 \begin{align*}
 &T(X,A) = (A, \emptyset) \text{, for any } (X,A) \in \boldsymbol{CW^2},  \\
 &T(f) = f_{|(A, \emptyset)} : (A, \emptyset) \to (B, \emptyset) \text{, for any } f: (X,A) \to (Y,B) \in \boldsymbol{CW^2}.
 \end{align*}
-A \textbf{generalized homology theory} is a pair $(H_*, \partial_*)$, consisting of a sequence of functors $H_i : \boldsymbol{CW^2} \to \boldsymbol{AbGrp}$, together with a sequence of natural transformations $\partial_i : H_i \to H_{i-1} \circ T$, s.t. the following three conditions are satisfied: \begin{itemize}
+A \textbf{generalized homology theory} is a pair $(H_*, \partial_*)$, consisting of a sequence of functors $H_i : \boldsymbol{CW^2} \to \boldsymbol{Ab}$, together with a sequence of natural transformations $\partial_i : H_i \to H_{i-1} \circ T$, s.t. the following three conditions are satisfied: \begin{itemize}
 \item[1.] \textbf{Homotopy-invariance:} If $f,g \in \boldsymbol{CW^2}$ are homotopic maps, then $H_i(f)=H_i(g)$ for all $i$.
 \item[2.] \textbf{Excision:} Let $(X,A) \in \boldsymbol{CW^2}$ and suppose $U$ is a subspace of $X$ with $\overline{U} \subset int(A)$, then the inclusion $j: (X-U,A-U) \to (X,A)$ induces isomorphisms 
 \begin{equation*}
@@ -619,8 +639,6 @@ for each simplex $\sigma \subset X$, since either $H_{|\sigma \times \{ s \}}=id
 BEWEIS DARUEBER: ARGUMENTE
 
 \section{Intersection bordism}
-
-DIMENSION DEF. DARUNTER
  
 \begin{definition}
 For a PL space $P$, a PL map $f: P \to X$ is called \textbf{($\boldsymbol{\overline{p}}$,i)-allowable} if 
@@ -724,13 +742,14 @@ is an isomorphism for $i \geq 1$.
 
 \begin{thebibliography}[
 \bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
-\bibitem{hatcher}Allen Hatcher, \textit{Algebraic Topology.}, Cambridge University Press, 2002, p.120.
-\bibitem{lecturenotes}I. M. Singer and J. A. Thorpe, \textit{Lecture Notes on Elementary Topology and Geometry}, M.I.T. and Haverford College, chapter 4.
+\bibitem{hatcher}Allen Hatcher, \textit{Algebraic Topology}, Cambridge University Press, 2002, p.120.
+\bibitem{lecturenotes}I. M. Singer and J. A. Thorpe, \textit{Lecture Notes on Elementary Topology and Geometry}, M.I.T. and Haverford College.
 \bibitem{GM}M. Goresky, R. McPherson, \textit{Intersection Homology Theory}, Topology Vol. 19, 1980, p. 135-162.
 \bibitem{BRS}S. Buoncristiano, C. Rourke and B. Sanderson, \textit{A Geometric Approach to Homology Theory}, London Math. Soc. Lecture notes No. 18. Cambridge University Press (1976).
 \bibitem{stong}R. E. Stong, \textit{Notes on cobordism theory}, Princeton University Press, Princeton, 1968.
 \bibitem{mccrory}C. McCrory, \textit{Stratified general position}, Algebraic and Geometric Topology, p.142-146. Springer Lecture Notes in Mathematics, No. 644. Springer-Verlag, New York (1978).
 \bibitem{zeeman}E. C. Zeeman, \textit{Seminar on Combinatorial Topology}, I.H.E.S. Paris and the University of Warwick at Conventry, 1963-1966.
+\bibitem{hudson}J.F.P. Hudson, \textit{Piecewise linear topology}, University of Durham, 1969.
 \end{thebibliography}
 
 \end{document}
