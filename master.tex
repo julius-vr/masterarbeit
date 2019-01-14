@@ -140,6 +140,25 @@ An n-dimensional \textbf{PL manifold} is a PL space $M$ such that the link of ea
 The purpose of this chapter is to give a geometric treatment of homology theories, as described by S. Buoncristiano, C. Rourke and B. Sanderson in \cite{BRS}. First we use local link properties to determine a class of polyhedra. Then, in an analogous manner to ordinary bordism theory, we define groups of bordism classes of maps, whose domains lie in the polyhedral class defined before. We observe that interesting examples of generalized homology theories can be interpreted in this way, including ordinary homology, ($\mathbb{Z}/2$)-homology and PL bordism theory. \newline
 For the rest of this chapter we make the convention that every polyhedron is PL and of pure dimension.
 
+\section{Orientations}
+
+\begin{definition}Let $K$ be a simplicial complex and suppose that we have chosen an ordering of the underlying set of vertices.
+\begin{itemize}
+\item An \textbf{orientation} of a $0$-dimensional simplex $\sigma \in K$ is the choice of a function $\sigma \to \{ -1,1 \}$
+\item For $k \geq 1$, let $\sigma = (v_0,...,v_k) \in K$ be a $k$-simplex. Every permutation $\pi$ on $\{ 0,...,k \}$ is given by a product of transpositions and the number of transpositions needed to obtain $\pi$ is uniquely determined by $\pi$. The parity of this number is called the \textbf{signature} of $\pi$. We call two permutations equivalent if and only if their signatures agree. Consequently, there are two equivalence classes of permutations: Those of even signature and those of odd signature. An \textbf{orientation} for $\sigma$ is the choice of such an equivalence class.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Note that an orientation on a simplex $\sigma$ induces a canonical orientation on any face $\tau < \sigma$ by deletion of all the vertices of $\sigma$ that do not occur in $\tau$.
+\end{remark}
+
+\begin{definition}
+Let $K$ be a simplicial complex of pure dimension $n$. We call $|K|$ \textbf{orientable} if it is possible assign an orientation to all the $n$-simplices in $K$ so that whenever two $n$-simplices $\sigma_1, \sigma_2$ have a common face $\tau$, the two orientations on $\tau$ which are induced by $\sigma_1$ and $\sigma_2$, are opposite. An \textbf{orientation} for $|K|$ is such a choice of orientations of all the $n$-simplices. It follows that if $|K|$ is orientable, then on each connected component there are precisely two possibilities of orientation.
+\end{definition}
+
+\section{Bordism theories}
+
 \begin{definition}
 Suppose we are given a class $\mathcal{L}_n$ of $(n-1)$-polyhedra which is closed under PL isomorphism. Then a \textbf{closed $\mathcal{L}_n$-manifold} is a polyhedron $M$ such that the link of each vertex of $M$ lies in $\mathcal{L}_n$. 
 \end{definition}
@@ -162,8 +181,6 @@ Let $W$ be an $\mathcal{L}_n$-manifold with boundary in a fixed theory with sing
 \begin{proof}
 By the third requirement of Def.\ref{theory}, the link of a vertex in $W$ is contained in $c \mathcal{L}_{n-1}$ if and only if it is not contained in $\mathcal{L}_n$. This shows that $\partial W$ is well-defined. For the second statement, note that $\partial W$ is a subpolyhedron by definition and that if $v$ is a vertex in $\partial W$ with $Lk(v,W)=cL$ for some $L \in \mathcal{L}_{n-1}$, then $Lk(v,\partial W) = L$.
 \end{proof}
-
-ORIENTIERUNGEN! \\
 
 \begin{definition}\label{bordismusdef}
 Let $\mathcal{L}$ be a theory with singularities and let $(X,A)$ be a pair of topological spaces (i.e. $A \subset X$ is a subspace). For two compact, oriented $\mathcal{L}_i$-manifolds (possibly with boundary) $P,Q$  assume that we are given continuous maps $f:(P, \partial P) \to (X,A)$ and $g:(Q , \partial Q) \to (X,A)$. An \textbf{oriented bordism} between $f$ and $g$ is a triple $(F,W,Z)$, where $W$ is a compact, oriented $\mathcal{L}_{i+1}$-manifold with boundary, s.t. $\partial W \cong P \sqcup -Q \cup Z$, $Z$ is a compact, oriented $\mathcal{L}_i$-manifold (possibly with boundary), s.t. $\partial Z\cong \partial P \sqcup - \partial Q$ and $F: (W,Z) \to (X,A)$ is a continuous map with $F _{|P} = f$ and $F_{|Q}=g$. If there exists a bordism between them, $f$ and $g$ are said to be \textbf{bordant} and we abbreviate this by writing $f \sim_{bord} g$. We call $F$ a \textbf{null-bordism} for $f$ if $Q= \emptyset$ and we say that $f$ is \textbf{null-bordant} if there exists a null-bordism for $f$.
@@ -802,7 +819,7 @@ If $I\Omega_*^{\overline{p},ord}$ denotes the intersection bordism theory corres
 \begin{align*}
 I\Omega_i^{\overline{p},ord}(X) \cong IH_i^{\overline{p}}(X)
 \end{align*}
-for any PL stratified pseudomanifold $X$ of dimension $n$ and any $i \geq 0$.
+for any PL stratified pseudomanifold $X^n$ and any $i \geq 0$.
 \end{corollar}
 
 \begin{proof}
@@ -833,8 +850,8 @@ see \cite{GM}, p.139.
 \end{proof}
 
 \begin{thebibliography}[
-\bibitem{pltopo}Colin Patrick Rourke, Brian Joseph Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
-\bibitem{hatcher}Allen Hatcher, \textit{Algebraic Topology}, Cambridge University Press, 2002, p.120.
+\bibitem{pltopo}C.P. Rourke, B.J. Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
+\bibitem{hatcher}A. Hatcher, \textit{Algebraic Topology}, Cambridge University Press, 2002, p.120.
 \bibitem{lecturenotes}I. M. Singer and J. A. Thorpe, \textit{Lecture Notes on Elementary Topology and Geometry}, M.I.T. and Haverford College.
 \bibitem{GM}M. Goresky, R. McPherson, \textit{Intersection Homology Theory}, Topology Vol. 19, 1980, p. 135-162.
 \bibitem{BRS}S. Buoncristiano, C. Rourke and B. Sanderson, \textit{A Geometric Approach to Homology Theory}, London Math. Soc. Lecture notes No. 18. Cambridge University Press (1976).
@@ -842,6 +859,17 @@ see \cite{GM}, p.139.
 \bibitem{mccrory}C. McCrory, \textit{Stratified general position}, Algebraic and Geometric Topology, p.142-146. Springer Lecture Notes in Mathematics, No. 644. Springer-Verlag, New York (1978).
 \bibitem{zeeman}E. C. Zeeman, \textit{Seminar on Combinatorial Topology}, I.H.E.S. Paris and the University of Warwick at Conventry, 1963-1966.
 \bibitem{hudson}J.F.P. Hudson, \textit{Piecewise linear topology}, University of Durham, 1969.
+\bibitem{banagl}M. Banagl, \textit{Topological Invariants of Stratified Spaces}, Springer Monographs in Mathematics, Springer-Verlag Berlin Heidelberg, 2007.
+\bibitem{kreck}M. Kreck, \textit{Differential Algebraic Topology,} American Mathematical Society Providence, Rhode Island, 2010.
+\bibitem{bredon}G. Bredon, \textit{Topology and Geometry,} Springer-Verlag New York and Heidelberg, 1993.
+\bibitem{dold}A. Dold, \textit{Lectures on Algebraic Topology,} Springer-Verlag Berlin, Heidelberg, New York, 1980.
+\bibitem{borel}A. Borel et al. \textit{Intersection Cohomology,} Birkhaeuser, Boston, Basel, Stuttgart, 1984.
+\bibitem{ES}S. Eilenberg, N. Steenrod, \textit{Foundations of Algebraic Topology,} Princeton University Press, 1952.
+\bibitem{kirwan}F. Kirwan, \textit{An introduction to intersection homology theory,} University of Oxford, 1988.
+\bibitem{adams}J.F. Adams, \textit{Stable homotopy and generalised homology,} Chicago Lectures in Mathematics, 1974.
+\bibitem{friedman}G. Friedman, \textit{Stratified and unstratified bordism of pseudomanifolds,} 	Texas Christian University, 2015.
+\bibitem{rourkestratifications}C. Rourke, B. Sanderson, \textit{Homology stratifications and intersection homology,} Geometry \& Topology Monographs Volume 2: Proceedings of the Kirbyfest, p.455-472.
+\bibitem{comezana}G.R. Comezana, \textit{Bordism of layered cycles and generalized intersection homology theory,} unpublished Ph.D thesis, Graduate School-New Brunswick, 1991.
 \end{thebibliography}
 
 \end{document}
