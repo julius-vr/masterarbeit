@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz-cd}
+\usepackage{mathtools}
 
 \newtheorem{prop}{Proposition}[chapter]
 \newtheorem{lemma}[prop]{Lemma}
@@ -19,6 +20,10 @@
 \begin{document}
 
 \tableofcontents
+
+\chapter{Introduction}
+
+Over the last century, ordinary homology has been shown to be an effective tool to study manifolds. One import reason for this is Poincar\'{e} duality, a remarkable symmetry which identifies homology groups of a closed, oriented manifold with its cohomology groups in complementary degrees. For example, it is this symmetry that enables one to define the signature, a bordism invariant which plays a key role in classification theory of manifolds. Beside manifold theory, a lot of mathematical research focuses on the study of singular spaces. These are topological spaces which are not necessarily manifolds, but that are not too far away from being manifolds. More precisely, 
 
 \chapter{Some PL topology}
 \label{sec:Einleitung}
@@ -271,7 +276,7 @@ A generalized homology theory $(H_*, \partial_*)$ is called \textbf{ordinary} if
 \end{itemize}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{Omegageneralizedhomology}
 For a theory with singularities $\mathcal{L}$, the pair $(\Omega_*^{\mathcal{L}}, \partial_*)$ is a generalized homology theory, where 
 \begin{align*}
 \partial_i :\  \Omega_i^{\mathcal{L}}(X,A) &\to \Omega_{i-1}^{\mathcal{L}}(A) \\
@@ -301,7 +306,7 @@ and since $[f]$ was chosen arbitrarily, we conclude $\phi_*= \psi_*$.
 \begin{equation*}
 j_i: \Omega_i^{\mathcal{L}}(X-U, A-U) \to \Omega_i^{\mathcal{L}}(X,A)
 \end{equation*}
-denote the map induced by inclusion. We show that $j_i$ is an isomorphism. To see surjectivity, consider $[f: (P, \partial P) \to (X,A)] \in \Omega_i^{\mathcal{L}}(X,A)$ and let $U_1 = f^{-1}(U)$ and $A_1= f^{-1}(A)$. We choose a triangulation $T$ of $P$, fine enough such that the smallest subcomplex of $T$ which contains every simplex that meets $M-A_1$, is contained in $M-U_1$. This is possible, since $d(M-int(A_1), \overline{U_1})>0$ for any metric $d$ on $P$. If we denote this subcomplex by $K$, note that for any vertex $v \in K$ either $Lk(v,K)=Lk(v,T)$ or, by the first condition of Def. \ref{theory}, there exists a vertex $w \in L:= Lk(v,T)$ such that $Lk(w,L)=Lk(v,Bd(K))$. It follows that
+denote the map induced by inclusion. We show that $j_i$ is an isomorphism. To see surjectivity, consider $[f: (P, \partial P) \to (X,A)] \in \Omega_i^{\mathcal{L}}(X,A)$ and let $U_1 = f^{-1}(U)$ and $A_1= f^{-1}(A)$. We choose a triangulation $T$ of $P$, fine enough such that the smallest subcomplex of $T$ which contains every simplex that meets $P-A_1$, is contained in $P-U_1$. This is possible, since $d(P-int(A_1), \overline{U_1})>0$ for any metric $d$ on $P$. If we denote this subcomplex by $K$, note that for any vertex $v \in K$ either $Lk(v,K)=Lk(v,T)$ or, by the first condition of Def. \ref{theory}, there exists a vertex $w \in L:= Lk(v,T)$ such that $Lk(w,L)=Lk(v,Bd(K))$. It then follows that
 \begin{align*}
 Lk(v,K) = w * Lk(v,Bd(K)) = w * Lk(w,L) \cong c(Lk(w,L)),
 \end{align*}
@@ -716,7 +721,7 @@ where the last inequality holds as $F$ and $G$ are both $(\overline{p},i+1)$-all
 \end{proof}
 
 \begin{definition}
-For a theory with singularities $\mathcal{L}$, we define the corresponding $(\overline{p},i)$\textbf{-allowable bordism set} by 
+For a theory with singularities $\mathcal{L}$, we define the corresponding $i$-th $\overline{p}$\textbf{-allowable bordism set} by 
 \begin{align*}
 I \Omega_i^{\mathcal{L}, \overline{p}}(X) := Isom_i^{\mathcal{L}, \overline{p}}(X)/ \sim_{i+1}^{\overline{p}} .
 \end{align*}
@@ -860,7 +865,7 @@ by Prop $\ref{Iomegazero}$ and a similar observation in terms of PL chains shows
 see \cite{GM}, p.139.
 \end{proof}
 
-\begin{corollar}
+\begin{corollar}\label{IOmegaindependentstrat}
 $I\Omega_i^{\mathcal{L}, \overline{p}}(X)$ is independent of the stratification of $X$, for each $i \geq 1$.
 \end{corollar}
 
@@ -873,6 +878,113 @@ for each $i \geq 1$.
 \end{corollar}
 
 The proofs of the previous two Corollaries are precisely the proofs of Corollaries \ref{IHindependentstrat} and \ref{IHindependenttriang}, respectively with $IH_*^{\overline{p}}$ replaced by $I\Omega_*^{\mathcal{L}, \overline{p}}$ and $H_*$ replaced by $\Omega_*^{\mathcal{L}}$.
+
+\chapter{Basic properties of $\overline{p}$-allowable bordism theories}
+
+This short chapter collects some of the basic facts about $\overline{p}$-allowable bordism theories. Rather than studying certain theories for special classes of singularities, we tried to focus on the behavior of these theories in a possibly general setting.
+Throughout this chapter, let $X$ be a PL stratified pseudomanifold of dimension $n$.
+\section{Induced maps}
+
+In order to compare different $\overline{p}$-allowable bordism groups, we would like to have induced maps for varying parameters. There are at least three such parameters that might be varied, namely the perversity function, the base pseudomanifold and the theory of singularities itself. In the following we explore certain situations in which there exist such induced maps. The proofs are essentially observations.
+
+\begin{prop}
+Let $\mathcal{L}$ be a fixed theory with singularities and assume we are given two perversities $\overline{p}, \overline{q}$ with $\overline{p} \leq \overline{q}$. We then have an induced homomorphism
+\begin{align*}
+I \Omega_i^{\mathcal{L}, \overline{p}}(X) \to I \Omega_i^{\mathcal{L}, \overline{q}}(X),
+\end{align*}
+for any $i \geq 0$.
+\end{prop}
+
+\begin{proof}
+By assumption, we have $\overline{p} \leq \overline{q}$ and therefore any $(\overline{p},i)$-allowable map is $(\overline{q},i)$-allowable as well. Similarly, any $(\overline{p},i+1)$-allowable bordism is $(\overline{q},i+1)$-allowable, and so any class in $I \Omega_i^{\mathcal{L}, \overline{p}}(X)$ defines a class in $I \Omega_i^{\mathcal{L}, \overline{q}}(X)$.
+\end{proof}
+
+\begin{prop}
+Assume we are given a perversity $\overline{p}$ and two theories with singularities $\mathcal{L}$ and $\mathcal{L'}$, which satisfy $\mathcal{L}_n \subset \mathcal{L}_n'$ for each $n$. We then have an induced homomorphism 
+\begin{align*}
+I \Omega_i^{\mathcal{L}, \overline{p}}(X) \to I \Omega_i^{\mathcal{L'}, \overline{p}}(X),
+\end{align*}
+for each $i \geq 0$.
+\end{prop}
+
+\begin{proof}
+Let $[f: P \to X] \in I \Omega_i^{\mathcal{L}, \overline{p}}(X)$. Then $P$ is a closed $\mathcal{L}_i$-manifold and by assumption it is a closed $\mathcal{L}_i'$-manifold, too. Similarly, any $\mathcal{L}$-bordism is an $\mathcal{L'}$-bordism as well and since the admissibility contraints are the same in either of the two groups, $[f]$ defines a class in $I \Omega_i^{\mathcal{L'}, \overline{p}}(X)$.
+\end{proof}
+
+\begin{prop}
+For any theory with singularities $\mathcal{L}$, any perversity $\overline{p}$, and for all $i \geq 0$ there exists a homomorphism
+\begin{align*}
+I \Omega_i^{\mathcal{L}, \overline{p}}(X) \to \Omega_i^{\mathcal{L}}(X)
+\end{align*}
+by discarding admissibility conditions that are imposed on maps and bordisms. If $X=M$ is a PL manifold, these maps are isomorphisms.
+\end{prop}
+
+\begin{proof}
+It is clear that such a homomorphism exists for each $i \geq 0$, since each $\overline{p}$-allowable $\mathcal{L}$-bordism class particularly defines an $\mathcal{L}$-bordism class of the same degree. If $X=M$ is a PL manifold, note that there is a trivial stratification of $M$, given by $M \supset \emptyset$, and Cor.\ref{IOmegaindependentstrat} tells us that we can define $I \Omega_i^{\mathcal{L}, \overline{p}}(M)$ with respect to this stratification. But then the admissibility conditions for maps and bordisms reduce to empty conditions, as there do not exist strata of codimension at least two. This means that there is a one-two-one correspondance between $\overline{p}$-allowable $\mathcal{L}$-bordism classes and $\mathcal{L}$-bordism classes over $M$ and thus the induced maps
+\begin{align*}
+I \Omega_i^{\mathcal{L}, \overline{p}}(M) \to \Omega_i^{\mathcal{L}}(M)
+\end{align*}
+are isomorphisms for each $i \geq 0$.
+\end{proof}
+
+\section{Relative groups}
+
+Let $U \subset X$ be an open subset. Then $U$ admits a canonical PL structure, which is induced by the one of $X$: $S$ is an admissible triangulation if there exists an admissible triangulation $T$ of $X$ and a subdivision $S' \lhd S$ such that each simplex of $S'$ is contained in some simplex of $T$. Moreover, $U$ admits a stratification
+\begin{align*}
+U \supset U \cap X_{n-2} \supset U \cap X_{n-3} \supset \cdots \supset U \cap X_{0} \supset \emptyset,
+\end{align*}
+induced by the stratification of $X$. In this way, $U$ is a PL stratified pseudomanifold in its own right, and so it makes sense to talk about $I\Omega_*^{\mathcal{L},\overline{p}}(U)$. For each $i \geq 0$, there is an induced homomorphism
+\begin{align*}
+I\Omega_i^{\mathcal{L},\overline{p}}(U) \to I\Omega_i^{\mathcal{L},\overline{p}}(X),
+\end{align*}
+since if $[f: P \to U] \in I\Omega_i^{\mathcal{L},\overline{p}}(U)$ with $f$ being $(\overline{p},i)$-allowable, then 
+\begin{align*}
+incl \circ f: P \to U \xhookrightarrow{} X
+\end{align*}
+is $(\overline{p},i)$-allowable over $X$ as we have
+\begin{align*}
+dim(incl \circ f(P) \cap X_{n-k})&=dim(f(P) \cap X_{n-k} \cap U)=dim(f(P) \cap U_{n-k}) \\
+&\leq i-k+ \overline{p}(k),
+\end{align*}
+and something similar holds for bordisms. Therefore, $[incl \circ f: P \to U \xhookrightarrow{} X]$ defines a class in  $I\Omega_i^{\mathcal{L},\overline{p}}(X)$.
+
+\begin{definition}
+With the above notation and for a pair of compact PL spaces $(P, Q)$, a PL map $f: (P, Q) \to (X,U)$ is called $(\overline{p},i)$-allowable if $dim(f(P)) \leq i$,  $dim(f(Q)) \leq i-1$ and 
+\begin{align*}
+&dim(f(P) \cap X_{n-k}) \leq i-k+ \overline{p}(k), \\
+&dim(f(Q) \cap U_{n-k}) \leq i-1-k+ \overline{p}(k),
+\end{align*}
+for all $k \geq 2$.
+\end{definition}
+
+\begin{definition}
+In the above setting, we define the $i$-th \textbf{relative $\overline{p}$-allowable bordism set} $I\Omega_i^{\mathcal{L},\overline{p}}(X,U)$ to be the set of $(\overline{p},i)$-allowable PL maps $f: (P,\partial P) \to (X,U)$ modulo $(\overline{p},i+1)$-allowable bordisms (in the sense of Def.\ref{bordismusdef}) $F:(W,Z) \to (X,U)$, where $P$ ranges over all compact, oriented $\mathcal{L}_i$-manifolds with boundary and $(W,Z)$ ranges over all pairs of compact, oriented $\mathcal{L}_{i+1}$-manifolds with boundary.
+\end{definition}
+
+\begin{remark}
+In order to see that the above Definition does not lead to set-theoretic problems, one can define an appropriate equivalence relation on the set of isomorphism classes of PL maps $(P, \partial P) \to (X,U)$, similarly as in Prop.\ref{intersectioneqrelation}. It is easily seen that relative $\overline{p}$-allowable bordism sets are in fact abelian groups with respect to disjoint union.
+\end{remark}
+We then have a homomorphism
+\begin{align*}
+I\Omega_i^{\mathcal{L},\overline{p}}(X) \to I\Omega_i^{\mathcal{L},\overline{p}}(X,U)
+\end{align*}
+by mapping a class $[P \to X] \in I\Omega_i^{\mathcal{L},\overline{p}}(X)$ to $[(P,\emptyset) \to (X,U)] \in I\Omega_i^{\mathcal{L},\overline{p}}(X,U)$ and this leads to the following 
+\begin{prop}
+In the above setting, we have the long exact sequence
+\begin{equation*}
+\begin{xy}
+\xymatrix{ 
+\cdots \ar[r]^{}     &   I\Omega_{i+1}^{\mathcal{L},\overline{p}}(X,U) \ar[r]^{\ \ \partial_{i+1}}    &   I\Omega_i^{\mathcal{L},\overline{p}}(U) \ar[r]^{}   &  I\Omega_i^{\mathcal{L},\overline{p}}(X) \\
+  \ar[r]^{}   &   I\Omega_i^{\mathcal{L},\overline{p}}(X,U)  \ar[r]^{\partial_i}   &  I\Omega_{i-1}^{\mathcal{L},\overline{p}}(U) \ar[r]^{}   &   \cdots
+}
+\end{xy}
+\end{equation*}
+for all $i \geq 1$, where $\partial$ is induced by restriction to the boundary.
+\end{prop}
+
+\begin{proof}
+This is essentially the proof of Theorem $\ref{Omegageneralizedhomology}$ together with paying careful attention to admissibility constraints.
+\end{proof}
 
 \begin{thebibliography}[
 \bibitem{pltopo}C.P. Rourke, B.J. Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
