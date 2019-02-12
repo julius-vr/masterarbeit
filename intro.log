@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  12 FEB 2019 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  11 FEB 2019 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**master.tex
-(./master.tex
+**intro.tex
+(./intro.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrreprt.cls
@@ -776,8 +776,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_shortintertext_sep=\dimen267
 )
 \c@prop=\count146
- (./master.aux)
-\openout1 = `master.aux'.
+ (./intro.aux)
+\openout1 = `intro.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -794,6 +794,7 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -818,9 +819,9 @@ LaTeX Info: Redefining \ref on input line 20.
 LaTeX Info: Redefining \pageref on input line 20.
 LaTeX Info: Redefining \nameref on input line 20.
 
-(./master.out) (./master.out)
+(./intro.out) (./intro.out)
 \@outlinefile=\write5
-\openout5 = `master.out'.
+\openout5 = `intro.out'.
 
  ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -853,166 +854,46 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 24.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--47
-
- []
-
-[1
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./master.toc)
+(./intro.toc)
 \tf@toc=\write6
-\openout6 = `master.toc'.
+\openout6 = `intro.toc'.
+
+ [1
 
 
-[3
-
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 chapter 1.
+[2
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--85
+] [3] [4
 
- []
-
-[4
-
-] [5] [6]
-chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
- [7
-
-] [8] [9]
-chapter 3.
-[10
-
-] <xymatrix 3x2 149> [11] [12] <xymatrix 4x2 280> [13] [14] [15] [16]
-chapter 4.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 421.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 421.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 421.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@overline' on input line 421.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 421.
-
-[17
-
-] [18] [19] [20] [21] [22]
-chapter 5.
-[23
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@overline' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-<xymatrix 3x2 149> [24] [25] [26] [27] [28] [29]
-chapter 6.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 941.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@overline' on input line 941.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 941.
-
-[30
-
-] [31] <xymatrix 4x2 280> [32]
-chapter 7.
-[33
-
-] [34
-
-] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1077.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1077.
- (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1077.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1077.
-
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 5D883F05F7DF1A70E9CDF34578AC3121;946.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1077.
+] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
+ (./intro.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 64.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 64.
+Package rerunfilecheck Info: File `intro.out' has not changed.
+(rerunfilecheck)             Checksum: 801D62DD1A15D68C626BAEEC19C65BEA;47.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 23014 strings out of 492982
- 424802 string characters out of 6134895
- 637159 words of memory out of 5000000
- 26015 multiletter control sequences out of 15000+600000
- 23889 words of font info for 92 fonts, out of 8000000 for 9000
+ 22597 strings out of 492982
+ 418211 string characters out of 6134895
+ 632320 words of memory out of 5000000
+ 25741 multiletter control sequences out of 15000+600000
+ 10976 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,95p,8844b,996s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{prop.4.9} has been referenced but does not exist,
- replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xybt
-ip10.pfb>
-Output written on master.pdf (35 pages, 385814 bytes).
+ 72i,7n,95p,8843b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on intro.pdf (5 pages, 79156 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 151 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 31 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,15 +1,16 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Some PL topology}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}A bordism approach to homology theories}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}Orientations}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}Bordism theories}{7}{section.3.2}
-\contentsline {chapter}{\numberline {4}The basic sets $Q_i^{\overline {p}}$}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Intersection homology}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Basic sets}{15}{section.4.2}
-\contentsline {chapter}{\numberline {5}A bordism approach to intersection homology}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}General position}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Theories of $\overline {p}$-allowable bordism classes}{20}{section.5.2}
-\contentsline {chapter}{\numberline {6}Basic properties of $\overline {p}$-allowable bordism theories}{26}{chapter.6}
-\contentsline {section}{\numberline {6.1}Induced maps}{26}{section.6.1}
-\contentsline {section}{\numberline {6.2}Relative groups}{27}{section.6.2}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {chapter}{\numberline {2}Some PL topology}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}A bordism approach to homology theories}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Orientations}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Bordism theories}{11}{section.3.2}
+\contentsline {chapter}{\numberline {4}The basic sets $Q_i^{\overline {p}}$}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Intersection homology}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Basic sets}{19}{section.4.2}
+\contentsline {chapter}{\numberline {5}A bordism approach to intersection homology}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}General position}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Theories of $\overline {p}$-allowable bordism classes}{24}{section.5.2}
+\contentsline {chapter}{\numberline {6}Basic properties of $\overline {p}$-allowable bordism theories}{30}{chapter.6}
+\contentsline {section}{\numberline {6.1}Induced maps}{30}{section.6.1}
+\contentsline {section}{\numberline {6.2}Relative groups}{31}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{33}{chapter.7}

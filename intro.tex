@@ -1,0 +1,64 @@
+\documentclass{scrreprt}
+\usepackage[english]{babel}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem{theorem}[prop]{Theorem}
+\newtheorem{definition}[prop]{Definition}
+\newtheorem{remark}[prop]{Remark}
+\newtheorem{example}[prop]{Example}
+\newtheorem{corollar}[prop]{Corollary}
+
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+Over the last century, ordinary homology has been shown to be an effective tool to study manifolds. One import reason for this is Poincar\'{e} duality, a remarkable symmetry which identifies homology groups of a closed, oriented manifold with its cohomology groups in complementary degrees. For example, it is this symmetry that enables one to define the signature, a bordism invariant which plays a key role in classification theory of manifolds. Beside manifold theory, a lot of mathematical research focuses on the study of singular spaces. These are topological spaces which are not necessarily manifolds, but that are not too far away from being manifolds. More precisely, our interpretation of singular spaces is the one of stratified spaces. Roughly speaking, a stratified space is a topological space, together with a filtration of closed subspaces which divide the space into manifolds and such that certain local triviality conditions are satisfied. This view is in fact less artificial as it first might appear: stratified spaces often arise naturally and include large and interesting classes of spaces, such as complex algebraic varieties, manifolds with boundary, polyhedra and many more. \\
+Unfortunately, Poincar\'{e} duality does not hold for stratified spaces. The symmetry is already violated by prototype-examples of stratified spaces, such as the suspension of the two-torus. In \cite{GM}, Goresky and McPherson suggested that one should impose certain admissibility conditions on chains of the ordinary chain complex, which reflect the deviation of transversality to the closed subspaces (the strata) of the stratified space. This then leads to a subcomplex of the ordinary chain complex whose homology is called intersection homology, denoted by $IH_*$ and Goresky and McPherson proved that intersection homology, in a sense restores Poincar\'{e} duality for singular spaces. \\
+Apart from ordinary homology, there were other (co)homology theories discovered. These so-called generalized (co)homology theories satisfy all of the Eilenberg-Steenrod axioms (which hold for ordinary homology), except for the dimension axiom, which states that the ordinary homology of a point is concentrated in degree zero. Examples of such generalized theories include topological K-theory and several (co)bordism theories. Those generalized theories gave new insights in topology and geometry, for example K-theory is used to prove the Atiyah-Singer index theorem. And as these theories are homotopy-invariant, they lead to a whole bunch of new topological invariants, worth being studied in their own right. \\
+In \cite{problemsIH}, Goresky and McPherson proposed the (still unsolved) problem of how to define an appropriate intersection version, corresponding to a given generalized homology theory. In their opinion, such a theory should satisfy Poincar\'{e} duality for singular spaces (in a suitable sense) and should agree with the usual generalized theory of a small resolution (when one exists). \\
+One main obstruction to define something similar to intersection homology also in the generalized setting is a theorem proved by Burdick, Conner and Floyd in \cite{bcf}, which states that whenever a generalized homology theory can be computed as the homology of a geometric chain complex, then the theory is isomorphic to the direct sum of ordinary homology groups with certain coefficients. It is known that the latter is not generally true for generalized homology theories, e.g. for oriented bordism this does not hold. Consequently, generalized homology theories do not necessarily arise as the homology of certain geometric chain complexes, and therefore the program which is used to define intersection homology is not applicable, as there do not even exist chains to impose admissibility conditions on. \\
+In \cite{BRS}, Buoncristiano, Rourke and Sanderson give an approach to generalized homology theories via bordism theories and their elaboration peaks in the observation that essentially every generalized homology theory can be realized as some bordism theory, at least under mild assumptions. In particular, ordinary homology can be represented as a bordism theory and in \cite{rourkestratifications}, Rourke and Sanderson use this bordism-type approach and impose admissibility conditions on bordism classes which define ordinary homology. They prove that the group of these admissible bordism classes is just intersection homology. \\
+In this work, we also use the idea of representing generalized homology theories as bordism theories. But the admissibility constraints we impose on bordism classes are different from those imposed in \cite{rourkestratifications}. The conditions we impose follow the ideas of Comezana, proposed in \cite{comezana}.  Consequently, the resulting admissible bordism theories generally differ from those suggested in \cite{rourkestratifications}, although they agree in the case of ordinary homology. This work is organized as follows: \\
+Chapter 2 gives the necessary background from PL topology which we need to proceed. Almost everything we do takes place in the PL setting. \\
+Chapter 3 follows ideas of Buoncristiano, Rourke and Sanderson to represent generalized theories as bordism. We define certain classes of links which enables us to define a sensible bordism relation on polyhedra whose links lie in these classes. These so-called theories with singularities determine bordism theories and we prove them to be generalized homology theories. \\
+Chapter 4 describes the so-called basic sets, which were introduced by Goresky and McPherson in \cite{GM} in order to relate ordinary homology and intersection homology. Given a PL stratified pseudomanifold $X$, basic sets are certain subcomplexes of $X$ and carry information about admissibility conditions imposed on PL chains in $X$. \\
+Chapter 5 introduces admissibility conditions on bordism classes and it turns out that these $\overline{p}$-allowable bordism classes form abelian groups. Given any bordism theory with singularities, we give a relation of the corresponding $\overline{p}$-allowable theory of a PL pseudomanifold $X$ and the usual theory evaluated on certain basic sets of $X$, similarly as the relation for intersection homology given in \cite{GM}. We conclude that $\overline{p}$-allowable theories do not depend on stratification and triangulation of the underlying pseudomanifold. \\
+Chapter 6 gives some insight into the general behavior of $\overline{p}$-allowable bordism theories. Induced maps are discussed and relative groups are defined in suitable situations, which then give rise to a long exact sequence of $\overline{p}$-allowable bordism groups.
+
+\begin{thebibliography}[
+\bibitem{pltopo}C.P. Rourke, B.J. Sanderson, \textit{Introduction to piecewise-linear topology}, Ergebnisse der Mathematik und ihrer Grenzgebiete, Band 69, Springer-Verlag, Heidelberg and New York, 1978.
+\bibitem{hatcher}A. Hatcher, \textit{Algebraic Topology}, Cambridge University Press, 2002, p.120.
+\bibitem{lecturenotes}I. M. Singer and J. A. Thorpe, \textit{Lecture Notes on Elementary Topology and Geometry}, M.I.T. and Haverford College.
+\bibitem{GM}M. Goresky, R. McPherson, \textit{Intersection Homology Theory}, Topology Vol. 19, 1980, p. 135-162.
+\bibitem{BRS}S. Buoncristiano, C. Rourke and B. Sanderson, \textit{A Geometric Approach to Homology Theory}, London Math. Soc. Lecture notes No. 18. Cambridge University Press (1976).
+\bibitem{stong}R. E. Stong, \textit{Notes on cobordism theory}, Princeton University Press, Princeton, 1968.
+\bibitem{mccrory}C. McCrory, \textit{Stratified general position}, Algebraic and Geometric Topology, p.142-146. Springer Lecture Notes in Mathematics, No. 644. Springer-Verlag, New York (1978).
+\bibitem{zeeman}E. C. Zeeman, \textit{Seminar on Combinatorial Topology}, I.H.E.S. Paris and the University of Warwick at Conventry, 1963-1966.
+\bibitem{bcf}R.O. Burdick, P.E. Conner, E.E. Floyd, \textit{Chain theories and their derived homologies},  Proceedings of the American Mathematical Society, Vol. 19, No. 5 (Oct., 1968), p. 1115-1118.
+\bibitem{hudson}J.F.P. Hudson, \textit{Piecewise linear topology}, University of Durham, 1969.
+\bibitem{banagl}M. Banagl, \textit{Topological Invariants of Stratified Spaces}, Springer Monographs in Mathematics, Springer-Verlag Berlin Heidelberg, 2007.
+\bibitem{kreck}M. Kreck, \textit{Differential Algebraic Topology,} American Mathematical Society Providence, Rhode Island, 2010.
+\bibitem{bredon}G. Bredon, \textit{Topology and Geometry,} Springer-Verlag New York and Heidelberg, 1993.
+\bibitem{dold}A. Dold, \textit{Lectures on Algebraic Topology,} Springer-Verlag Berlin, Heidelberg, New York, 1980.
+\bibitem{borel}A. Borel et al. \textit{Intersection Cohomology,} Birkhaeuser, Boston, Basel, Stuttgart, 1984.
+\bibitem{ES}S. Eilenberg, N. Steenrod, \textit{Foundations of Algebraic Topology,} Princeton University Press, 1952.
+\bibitem{kirwan}F. Kirwan, \textit{An introduction to intersection homology theory,} University of Oxford, 1988.
+\bibitem{adams}J.F. Adams, \textit{Stable homotopy and generalised homology,} Chicago Lectures in Mathematics, 1974.
+\bibitem{friedman}G. Friedman, \textit{Stratified and unstratified bordism of pseudomanifolds,} 	Texas Christian University, 2015.
+\bibitem{problemsIH}M. Goresky, R. McPherson, \textit{Problems and bibliography on intersection homology}, Intersection Cohomology, A. Borel, p.221-230, Series: Progress in Mathematics, v.50, Birkhaeuser, Boston, 1984.
+\bibitem{rourkestratifications}C. Rourke, B. Sanderson, \textit{Homology stratifications and intersection homology,} Geometry \& Topology Monographs Volume 2: Proceedings of the Kirbyfest, p.455-472.
+\bibitem{comezana}G.R. Comezana, \textit{Bordism of layered cycles and generalized intersection homology theory,} unpublished Ph.D. thesis, Graduate School-New Brunswick, 1991.
+\end{thebibliography}
+
+\end{document}
